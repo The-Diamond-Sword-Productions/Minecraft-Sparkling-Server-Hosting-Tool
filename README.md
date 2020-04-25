@@ -7,5 +7,7 @@ If you have any questions, make sure to go to www.discord.me/tds-productions (or
 Changelog :
 
 0.1 - N/I
+
 0.2 - N/I
+
 0.3 - RELEASE - Coming soon! 
