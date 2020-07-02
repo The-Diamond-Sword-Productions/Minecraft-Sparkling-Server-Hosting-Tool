@@ -7,4 +7,4 @@ If you have any questions, make sure to go to www.discord.me/tds-productions (or
 
 [Official website : http://mssht.onthewifi.com/]
 
-Fore more info, you can access the Minecraft Sparkling Server Hosting tool here: https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/wiki
+Fore more info, you can access the Minecraft Sparkling Server Hosting tool wiki here: https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/wiki
