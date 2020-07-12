@@ -707,7 +707,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                         MessageBox.Show("Please check your connection and try again.", "No Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    if (GetResponseText("https://raw.githubusercontent.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/master/LastestRelease") == Client_Version.Text)
+                    if (GetResponseText("https://pastebin.com/raw/s7pTzDCM") == Client_Version.Text)
                     {
                         MessageBox.Show("You are at the lastest version!", "Up-to-date!", MessageBoxButtons.OK);
                     }
@@ -750,7 +750,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 MessageBox.Show("Please check your connection and try again.", "No Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (GetResponseText("https://raw.githubusercontent.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/master/LastestRelease") == Client_Version.Text)
+            if (GetResponseText("https://pastebin.com/raw/s7pTzDCM") == Client_Version.Text)
             {
                 MessageBox.Show("You are at the lastest version!", "Up-to-date!", MessageBoxButtons.OK);
             }
