@@ -80,6 +80,7 @@
     <Compile Include="ServerPropertiesForm.Designer.cs">
       <DependentUpon>ServerPropertiesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpigotVersion.cs" />
     <Compile Include="WhitelistForm.cs">
       <SubType>Form</SubType>
     </Compile>

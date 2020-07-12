@@ -66,7 +66,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label7 = new System.Windows.Forms.Label();
             this.findInstalledServerButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.serverPathTextBox = new System.Windows.Forms.TextBox();
+            this.serverRunPathTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.startStopServerButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -410,7 +410,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.findInstalledServerButton);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.serverPathTextBox);
+            this.tabPage2.Controls.Add(this.serverRunPathTextBox);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.startStopServerButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -535,13 +535,13 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // serverPathTextBox
+            // serverRunPathTextBox
             // 
-            this.serverPathTextBox.Location = new System.Drawing.Point(6, 63);
-            this.serverPathTextBox.Name = "serverPathTextBox";
-            this.serverPathTextBox.Size = new System.Drawing.Size(466, 20);
-            this.serverPathTextBox.TabIndex = 5;
-            this.serverPathTextBox.TextChanged += new System.EventHandler(this.serverpath_TextChanged);
+            this.serverRunPathTextBox.Location = new System.Drawing.Point(6, 63);
+            this.serverRunPathTextBox.Name = "serverRunPathTextBox";
+            this.serverRunPathTextBox.Size = new System.Drawing.Size(466, 20);
+            this.serverRunPathTextBox.TabIndex = 5;
+            this.serverRunPathTextBox.TextChanged += new System.EventHandler(this.serverpath_TextChanged);
             // 
             // label3
             // 
@@ -887,7 +887,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox serverPathTextBox;
+        private System.Windows.Forms.TextBox serverRunPathTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label5;
