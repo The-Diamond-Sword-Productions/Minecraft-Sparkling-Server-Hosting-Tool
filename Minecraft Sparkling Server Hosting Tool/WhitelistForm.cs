@@ -28,7 +28,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.main = main;
             serverPathLabel.Text = main.ServerDirectory;
 
-            string data = File.ReadAllText(main.ServerDirectory + "whitelist.json");
+            string data = File.ReadAllText(main.ServerDirectory + @"\whitelist.json");
 
             if (!string.IsNullOrWhiteSpace(data))
             {
