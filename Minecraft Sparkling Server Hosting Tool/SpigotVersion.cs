@@ -17,9 +17,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             URL = url;
         }
 
-        public static SpigotVersion SixteenOne = new SpigotVersion("1.15.2", "https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar");
-        public static SpigotVersion FifteenTwo = new SpigotVersion("1.15.1", "https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar");
-        public static SpigotVersion FifteenOne = new SpigotVersion("1.16.1", "https://cdn.getbukkit.org/spigot/spigot-1.15.1.jar");
+        public static SpigotVersion SixteenOne = new SpigotVersion("1.16.1", "https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar");
+        public static SpigotVersion FifteenTwo = new SpigotVersion("1.15.2", "https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar");
+        public static SpigotVersion FifteenOne = new SpigotVersion("1.15.1", "https://cdn.getbukkit.org/spigot/spigot-1.15.1.jar");
         public static SpigotVersion Fifteen = new SpigotVersion("1.15", "https://cdn.getbukkit.org/spigot/spigot-1.15.jar");
         public static SpigotVersion FourteenFour = new SpigotVersion("1.14.4", "https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar");
         public static SpigotVersion FourteenThree = new SpigotVersion("1.14.3", "https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar");
