@@ -135,7 +135,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 return;
             }
 
-            label12.Text = "Downloading: " + serverInstallPathTextBox.Text + @"\ServerRunner_" + versionDropdown.Text + ".jar Please wait...";
             DialogResult result = MessageBox.Show("You are about to install Minecraft Server " + versionDropdown.Text + " at " + serverInstallPathTextBox.Text + ". \n\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (result != DialogResult.Yes) return;
@@ -705,62 +704,139 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (memoryDropdown.Text == "1")
+            if (memoryGBRadio.Checked == false)
             {
-                memoryDropdown.Text = "1024";
+                string Temp = memoryDropdown.Text;
+                if (Temp == "0.1")
+                {
+                    memoryDropdown.Text = "100";
+                }
+                else if (Temp == "0.2")
+                {
+                    memoryDropdown.Text = "200";
+                }
+                else if (Temp == "0.3")
+                {
+                    memoryDropdown.Text = "300";
+                }
+                else if (Temp == "0.4")
+                {
+                    memoryDropdown.Text = "400";
+                }
+                else if (Temp == "0.5")
+                {
+                    memoryDropdown.Text = "500";
+                }
+                else if (Temp == "0.6")
+                {
+                    memoryDropdown.Text = "600";
+                }
+                else if (Temp == "0.7")
+                {
+                    memoryDropdown.Text = "700";
+                }
+                else if (Temp == "0.8")
+                {
+                    memoryDropdown.Text = "800";
+                }
+                else if (Temp == "0.9")
+                {
+                    memoryDropdown.Text = "900";
+                }
+                else if (Temp.Length > 0)
+                {
+                    memoryDropdown.Text = Temp + "000";
+                }
+                else
+                {
+                    MessageBox.Show("A conversion error occured.", "Conversion error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                    memoryDropdown.Items.Clear();
+                    memoryDropdown.Items.Add("512");
+                    memoryDropdown.Items.Add("1024");
+                    memoryDropdown.Items.Add("2048");
+                    memoryDropdown.Items.Add("3072");
+                    memoryDropdown.Items.Add("4096");
+                    memoryDropdown.Items.Add("5120");
+                    memoryDropdown.Items.Add("6144");
+                    memoryDropdown.Items.Add("7168");
+                    memoryDropdown.Items.Add("8192");
+                    memoryDropdown.Items.Add("9216");
+                    memoryDropdown.Items.Add("10240");
+                    memoryDropdown.Items.Add("11264");
+                    memoryDropdown.Items.Add("12288");
+                    memoryDropdown.Items.Add("13312");
+                    memoryDropdown.Items.Add("14336");
+                    memoryDropdown.Items.Add("15360");
+                    memoryDropdown.Items.Add("16384");
+                    memoryDropdown.Items.Add("17408");
+                    memoryDropdown.Items.Add("18432");
+                    memoryDropdown.Items.Add("19456");
+                    memoryDropdown.Items.Add("20480");
+                }
+                else if (memoryMBRadio.Checked == false)
+                {
+                    string Temp = memoryDropdown.Text;
+                if (Temp.Length == 1)
+                {
+                    Temp = "0.00" + Temp;
+                    Temp = Temp.Remove(5);
+                }
+                else if (Temp.Length == 2)
+                {
+                    Temp = "0.0" + Temp;
+                    Temp = Temp.Remove(4);
+                }
+                else if (Temp.Length == 3)
+                {
+                    Temp = "0." + Temp;
+                    Temp = Temp.Remove(3);
+                }
+                else if (Temp.Length == 4)
+                {
+                    Temp = Temp.Remove(1);
+                }
+                else if (Temp.Length == 5)
+                {
+                    Temp = Temp.Remove(2);
+                }
+                else if (Temp.Length == 6)
+                {
+                    Temp = Temp.Remove(3);
+                }
+                else
+                {
+                    MessageBox.Show("A conversion error occured.", "Conversion error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                    memoryDropdown.Text = Temp;
+                    memoryDropdown.Items.Clear();
+                    memoryDropdown.Items.Add("0.5");
+                    memoryDropdown.Items.Add("1");
+                    memoryDropdown.Items.Add("2");
+                    memoryDropdown.Items.Add("3");
+                    memoryDropdown.Items.Add("4");
+                    memoryDropdown.Items.Add("5");
+                    memoryDropdown.Items.Add("6");
+                    memoryDropdown.Items.Add("7");
+                    memoryDropdown.Items.Add("8");
+                    memoryDropdown.Items.Add("9");
+                    memoryDropdown.Items.Add("10");
+                    memoryDropdown.Items.Add("11");
+                    memoryDropdown.Items.Add("12");
+                    memoryDropdown.Items.Add("13");
+                    memoryDropdown.Items.Add("14");
+                    memoryDropdown.Items.Add("15");
+                    memoryDropdown.Items.Add("16");
+                    memoryDropdown.Items.Add("17");
+                    memoryDropdown.Items.Add("18");
+                    memoryDropdown.Items.Add("19");
+                    memoryDropdown.Items.Add("20");
             }
-            memoryDropdown.Items.Clear();
-            memoryDropdown.Items.Add("512");
-            memoryDropdown.Items.Add("1024");
-            memoryDropdown.Items.Add("2048");
-            memoryDropdown.Items.Add("3072");
-            memoryDropdown.Items.Add("4096");
-            memoryDropdown.Items.Add("5120");
-            memoryDropdown.Items.Add("6144");
-            memoryDropdown.Items.Add("7168");
-            memoryDropdown.Items.Add("8192");
-            memoryDropdown.Items.Add("9216");
-            memoryDropdown.Items.Add("10240");
-            memoryDropdown.Items.Add("11264");
-            memoryDropdown.Items.Add("12288");
-            memoryDropdown.Items.Add("13312");
-            memoryDropdown.Items.Add("14336");
-            memoryDropdown.Items.Add("15360");
-            memoryDropdown.Items.Add("16384");
-            memoryDropdown.Items.Add("17408");
-            memoryDropdown.Items.Add("18432");
-            memoryDropdown.Items.Add("19456");
-            memoryDropdown.Items.Add("20480");
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (memoryDropdown.Text == "1024")
-            {
-                memoryDropdown.Text = "1";
-            }
-            memoryDropdown.Items.Clear();
-            memoryDropdown.Items.Add("0.5");
-            memoryDropdown.Items.Add("1");
-            memoryDropdown.Items.Add("2");
-            memoryDropdown.Items.Add("3");
-            memoryDropdown.Items.Add("4");
-            memoryDropdown.Items.Add("5");
-            memoryDropdown.Items.Add("6");
-            memoryDropdown.Items.Add("7");
-            memoryDropdown.Items.Add("8");
-            memoryDropdown.Items.Add("9");
-            memoryDropdown.Items.Add("10");
-            memoryDropdown.Items.Add("11");
-            memoryDropdown.Items.Add("12");
-            memoryDropdown.Items.Add("13");
-            memoryDropdown.Items.Add("14");
-            memoryDropdown.Items.Add("15");
-            memoryDropdown.Items.Add("16");
-            memoryDropdown.Items.Add("17");
-            memoryDropdown.Items.Add("18");
-            memoryDropdown.Items.Add("19");
-            memoryDropdown.Items.Add("20");
+
         }
 
         private void button8_Click(object sender, EventArgs e)
