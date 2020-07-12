@@ -1009,7 +1009,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             {
                 Status.Text = "Opening server.properties file...";
                 Status_.Text = "Opening server.properties file...";
-                Form2 frm = new Form2(serverpath.Text);
+                ServerPropertiesForm frm = new ServerPropertiesForm(serverpath.Text);
                 frm.Show();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
@@ -1061,7 +1061,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     }
                     Status.Text = "Opening server.properties file...";
                     Status_.Text = "Opening server.properties file...";
-                    Form2 frm = new Form2(serverpath.Text);
+                    ServerPropertiesForm frm = new ServerPropertiesForm(serverpath.Text);
                     frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
@@ -1340,7 +1340,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             {
                 Status.Text = "Opening whitelist file...";
                 Status_.Text = "Opening whitelist file...";
-                Form3 frm = new Form3(serverpath.Text);
+                WhitelistForm frm = new WhitelistForm(serverpath.Text);
                 frm.Show();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
@@ -1355,7 +1355,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     { }
                     Status.Text = "Opening whitelist file...";
                     Status_.Text = "Opening whitelist file...";
-                    Form3 frm = new Form3(serverpath.Text);
+                    WhitelistForm frm = new WhitelistForm(serverpath.Text);
                     frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";

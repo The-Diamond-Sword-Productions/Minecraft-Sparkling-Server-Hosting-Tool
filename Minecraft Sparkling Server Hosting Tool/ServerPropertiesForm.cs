@@ -11,9 +11,9 @@ using System.IO;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
-    public partial class Form2 : Form
+    public partial class ServerPropertiesForm : Form
     {
-        public Form2(string data)
+        public ServerPropertiesForm(string data)
         {
             InitializeComponent();
             label2.Text = data;

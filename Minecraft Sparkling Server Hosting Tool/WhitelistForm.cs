@@ -14,10 +14,10 @@ using System.Security.Policy;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
-    public partial class Form3 : Form
+    public partial class WhitelistForm : Form
     {
         static string URL = @"https://api.mojang.com/users/profiles/minecraft/";
-        public Form3(string data)
+        public WhitelistForm(string data)
         {
             InitializeComponent();
             label4.Text = data;
