@@ -596,10 +596,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 await sw.WriteLineAsync("view-distance=10");
                 await sw.WriteLineAsync("motd=A Minecraft Server");
             }
-            File.Create(serverInstallPathTextBox.Text + @"\" + "server.properties");
-            File.Create(serverInstallPathTextBox.Text + @"\" + "tempserver.properties");
-            File.Create(serverInstallPathTextBox.Text + @"\" + "whitelist.json");
-            File.Create(serverInstallPathTextBox.Text + @"\" + "tempwhitelist.json");
+            File.Create(ServerDirectory + @"\" + "server.properties");
+            File.Create(ServerDirectory + @"\" + "tempserver.properties");
+            File.Create(ServerDirectory + @"\" + "whitelist.json");
+            File.Create(ServerDirectory + @"\" + "tempwhitelist.json");
 
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 
 

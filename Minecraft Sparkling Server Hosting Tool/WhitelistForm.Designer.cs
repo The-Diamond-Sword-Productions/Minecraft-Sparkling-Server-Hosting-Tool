@@ -116,7 +116,7 @@
             this.serverPathLabel.Name = "serverPathLabel";
             this.serverPathLabel.Size = new System.Drawing.Size(41, 13);
             this.serverPathLabel.TabIndex = 7;
-            this.serverPathLabel.Text = "label4";
+            this.serverPathLabel.Text = "";
             // 
             // statusLabel
             // 
