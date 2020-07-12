@@ -1345,30 +1345,18 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Text = "Open Server Plugins File";
                     label15.Text = "Running Server On Spigot.";
                 }
-                else
-                {
-                    button14.Enabled = false;
-                }
 
-                if (File.Exists(ServerDirectory + @"\Vanilla.txt"))
+                else if (File.Exists(ServerDirectory + @"\Vanilla.txt"))
                 {
                     button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
                     button3.Enabled = true;
                     button15.Enabled = true;
+                    button14.Enabled = false;
                     button3.Text = "Open Server properties";
                     label15.Text = "Running Server On Vanilla.";
                 }
 
-                if (!File.Exists(ServerDirectory + @"\Run.bat"))
-                {
-                    label13.Text = "This path doesn't contain any minecraft server.";
-                    button14.Enabled = false;
-                    button3.Enabled = false;
-                    button15.Enabled = false;
-                    button3.Text = "Open Server properties";
-                    label15.Text = "No server found...";
-                }
-                else
+                else if (File.Exists(ServerDirectory + @"\Run.bat"))
                 {
                     label13.Text = "Server Found!";
                     button14.Enabled = true;
@@ -1383,7 +1371,17 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     if (Result == DialogResult.Yes)
                     {
                         ServerCompatibleForm frm = new ServerCompatibleForm(this);
+                        frm.Show();
                     }
+                }
+                else
+                {
+                    label13.Text = "This path doesn't contain any minecraft server.";
+                    button14.Enabled = false;
+                    button3.Enabled = false;
+                    button15.Enabled = false;
+                    button3.Text = "Open Server properties";
+                    label15.Text = "No server found...";
                 }
             }
         }
