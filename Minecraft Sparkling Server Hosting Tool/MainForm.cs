@@ -131,7 +131,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 return;
             }
 
-            label12.Text = "Downloading: " + serverInstallPathTextBox.Text + @"\ServerRunner_" + versionDropdown.Text + ".jar Please wait...";
             DialogResult result = MessageBox.Show("You are about to install Minecraft Server " + versionDropdown.Text + " at " + serverInstallPathTextBox.Text + ". \n\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
