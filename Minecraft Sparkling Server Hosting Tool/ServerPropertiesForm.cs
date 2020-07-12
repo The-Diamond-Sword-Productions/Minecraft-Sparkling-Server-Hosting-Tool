@@ -20,7 +20,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             if (File.Exists(label2.Text + @"\server.properties") == true)
             {
                 label6.Text = "Reading server.properties file...";
-                string nether = File.ReadLines(label2.Text + @"\server.properties").Skip(4).Take(1).First();
+                string nether = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(4).Take(1).First();
                 if (nether == "allow-nether=true")
                 {
                     NetherT.Checked = true;
@@ -29,10 +29,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     NetherF.Checked = true;
                 }
-                string worldstr = File.ReadLines(label2.Text + @"\server.properties").Skip(5).Take(1).First();
+                string worldstr = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(5).Take(1).First();
                 worldstr = worldstr.Remove(0, 11);
                 world.Text = worldstr;
-                string flight = File.ReadLines(label2.Text + @"\server.properties").Skip(7).Take(1).First();
+                string flight = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(7).Take(1).First();
                 if (flight == "allow-flight=true")
                 {
                     AllowFlightT.Checked = true;
@@ -41,7 +41,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     AllowFlightF.Checked = true;
                 }
-                string achievements = File.ReadLines(label2.Text + @"\server.properties").Skip(8).Take(1).First();
+                string achievements = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(8).Take(1).First();
                 if (achievements == "announce-player-achievements=true")
                 {
                     AchievementsT.Checked = true;
@@ -50,13 +50,13 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     AchievementsF.Checked = true;
                 }
-                string levelType_ = File.ReadLines(label2.Text + @"\server.properties").Skip(11).Take(1).First();
+                string levelType_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(11).Take(1).First();
                 levelType_ = levelType_.Remove(0, 11);
                 LevelType.Text = levelType_;
-                string levelSeed_ = File.ReadLines(label2.Text + @"\server.properties").Skip(13).Take(1).First();
+                string levelSeed_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(13).Take(1).First();
                 levelSeed_ = levelSeed_.Remove(0, 11);
                 LevelSeed.Text = levelSeed_;
-                string NPC = File.ReadLines(label2.Text + @"\server.properties").Skip(18).Take(1).First();
+                string NPC = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(18).Take(1).First();
                 if (NPC == "spawn-npcs=true")
                 {
                     SpawnNPCt.Checked = true;
@@ -65,7 +65,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     SpawnNPCf.Checked = true;
                 }
-                string WT = File.ReadLines(label2.Text + @"\server.properties").Skip(19).Take(1).First();
+                string WT = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(19).Take(1).First();
                 if (WT == "white-list=true")
                 {
                     wtT.Checked = true;
@@ -74,7 +74,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     wtF.Checked = true;
                 }
-                string Animals = File.ReadLines(label2.Text + @"\server.properties").Skip(20).Take(1).First();
+                string Animals = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(20).Take(1).First();
                 if (Animals == "spawn-animals=true")
                 {
                     AnimalsT.Checked = true;
@@ -83,7 +83,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     AnimalsF.Checked = true;
                 }
-                string HT = File.ReadLines(label2.Text + @"\server.properties").Skip(21).Take(1).First();
+                string HT = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(21).Take(1).First();
                 if (HT == "hardcore=true")
                 {
                     hcT.Checked = true;
@@ -92,7 +92,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     hcF.Checked = true;
                 }
-                string Online = File.ReadLines(label2.Text + @"\server.properties").Skip(24).Take(1).First();
+                string Online = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(24).Take(1).First();
                 if (Online == "online-mode=true")
                 {
                     OnlineT.Checked = true;
@@ -101,7 +101,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     OnlineF.Checked = true;
                 }
-                string PVP = File.ReadLines(label2.Text + @"\server.properties").Skip(26).Take(1).First();
+                string PVP = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(26).Take(1).First();
                 if (PVP == "pvp=true")
                 {
                     PVPt.Checked = true;
@@ -110,7 +110,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     PVPf.Checked = true;
                 }
-                string Difficulty_ = File.ReadLines(label2.Text + @"\server.properties").Skip(27).Take(1).First();
+                string Difficulty_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(27).Take(1).First();
                 if (Difficulty_ == "difficulty=0")
                 {
                     Difficulty.Text = "Peaceful";
@@ -127,7 +127,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     Difficulty.Text = "Hard";
                 }
-                string CommandBlocks = File.ReadLines(label2.Text + @"\server.properties").Skip(28).Take(1).First();
+                string CommandBlocks = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(28).Take(1).First();
                 if (CommandBlocks == "enable-command-block=true")
                 {
                     CommandBlockT.Checked = true;
@@ -136,7 +136,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     CommandBlockF.Checked = true;
                 }
-                string Gamemode_ = File.ReadLines(label2.Text + @"\server.properties").Skip(29).Take(1).First();
+                string Gamemode_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(29).Take(1).First();
                 if (Gamemode_ == "gamemode=0")
                 {
                     Gamemode.Text = "Survival";
@@ -153,10 +153,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     Gamemode.Text = "Spectator";
                 }
-                string MaxPlayer_ = File.ReadLines(label2.Text + @"\server.properties").Skip(31).Take(1).First();
+                string MaxPlayer_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(31).Take(1).First();
                 MaxPlayer_ = MaxPlayer_.Remove(0, 12);
                 MaxPlayer.Text = MaxPlayer_;
-                string SpawnMonster = File.ReadLines(label2.Text + @"\server.properties").Skip(32).Take(1).First();
+                string SpawnMonster = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(32).Take(1).First();
                 if (SpawnMonster == "spawn-monsters=true")
                 {
                     MonsterT.Checked = true;
@@ -165,7 +165,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     MonsterF.Checked = true;
                 }
-                string Structures = File.ReadLines(label2.Text + @"\server.properties").Skip(33).Take(1).First();
+                string Structures = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(33).Take(1).First();
                 if (Structures == "generate-structures=true")
                 {
                     GenerateT.Checked = true;
@@ -174,10 +174,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     GenerateF.Checked = true;
                 }
-                string View = File.ReadLines(label2.Text + @"\server.properties").Skip(34).Take(1).First();
+                string View = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(34).Take(1).First();
                 View = View.Remove(0, 14);
                 ViewDistance.Text = View;
-                string motd_ = File.ReadLines(label2.Text + @"\server.properties").Skip(35).Take(1).First();
+                string motd_ = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(35).Take(1).First();
                 motd_ = motd_.Remove(0, 5);
                 motd.Text = motd_;
                 label6.Text = "Idle";
@@ -265,6 +265,159 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 if (OnlineT.Checked == true)
                 {
                 sw.WriteLine("online-mode=true");
+                }
+                else
+                {
+                    sw.WriteLine("online-mode=false");
+                }
+                sw.WriteLine("resource-pack=");
+                if (PVPt.Checked == true)
+                {
+                    sw.WriteLine("pvp=true");
+                }
+                else
+                {
+                    sw.WriteLine("pvp=false");
+                }
+                if (Difficulty.Text == "Peaceful")
+                {
+                    sw.WriteLine("difficulty=0");
+                }
+                else if (Difficulty.Text == "Easy")
+                {
+                    sw.WriteLine("difficulty=1");
+                }
+                else if (Difficulty.Text == "Normal")
+                {
+                    sw.WriteLine("difficulty=2");
+                }
+                else if (Difficulty.Text == "Hard")
+                {
+                    sw.WriteLine("difficulty=3");
+                }
+                if (CommandBlockT.Checked == true)
+                {
+                    sw.WriteLine("enable-command-block=true");
+                }
+                else
+                {
+                    sw.WriteLine("enable-command-block=false");
+                }
+                if (Gamemode.Text == "Survival")
+                {
+                    sw.WriteLine("gamemode=0");
+                }
+                else if (Gamemode.Text == "Creative")
+                {
+                    sw.WriteLine("gamemode=1");
+                }
+                else if (Gamemode.Text == "Adventure")
+                {
+                    sw.WriteLine("gamemode=2");
+                }
+                else if (Gamemode.Text == "Spectator")
+                {
+                    sw.WriteLine("gamemode=3");
+                }
+                sw.WriteLine("player-idle-timeout=0");
+                sw.WriteLine("max-players=" + MaxPlayer.Text);
+                if (MonsterT.Checked == true)
+                {
+                    sw.WriteLine("spawn-monsters=true");
+                }
+                else
+                {
+                    sw.WriteLine("spawn-monsters=false");
+                }
+                if (GenerateT.Checked == true)
+                {
+                    sw.WriteLine("generate-structures=true");
+                }
+                else
+                {
+                    sw.WriteLine("generate-structures=false");
+                }
+                sw.WriteLine("view-distance=" + ViewDistance.Text);
+                sw.WriteLine("motd=" + motd.Text);
+            }
+            using (StreamWriter sw = File.CreateText(label2.Text + @"\" + "tempserver.properties"))
+            {
+                sw.WriteLine("#Minecraft server properties");
+                sw.WriteLine("#Fri Jul 01 00:00:00 CEST 2020");
+                sw.WriteLine("generator-settings=");
+                sw.WriteLine("op-permission-level=4");
+                if (NetherT.Checked == true)
+                {
+                    sw.WriteLine("allow-nether=true");
+                }
+                else
+                {
+                    sw.WriteLine("allow-nether=false");
+                }
+                sw.WriteLine("level-name=" + world.Text);
+                sw.WriteLine("enable-query=false");
+                if (AllowFlightT.Checked == true)
+                {
+                    sw.WriteLine("allow-flight=true");
+                }
+                else
+                {
+                    sw.WriteLine("allow-flight=false");
+                }
+                if (AchievementsT.Checked == true)
+                {
+                    sw.WriteLine("announce-player-achievements=true");
+                }
+                else
+                {
+                    sw.WriteLine("announce-player-achievements=false");
+                }
+                sw.WriteLine("server-port=25565");
+                sw.WriteLine("max-world-size=29999984");
+                sw.WriteLine("level-type=" + LevelType.Text);
+                sw.WriteLine("enable-rcon=false");
+                sw.WriteLine("level-seed=" + LevelSeed.Text);
+                sw.WriteLine("force-gamemode=false");
+                sw.WriteLine("server-ip=");
+                sw.WriteLine("network-compression-threshold=256");
+                sw.WriteLine("max-build-height=256");
+                if (SpawnNPCt.Checked == true)
+                {
+                    sw.WriteLine("spawn-npcs=true");
+                }
+                else
+                {
+                    sw.WriteLine("spawn-npcs=false");
+                }
+                if (wtT.Checked == true)
+                {
+                    sw.WriteLine("white-list=true");
+                }
+                else
+                {
+                    sw.WriteLine("white-list=false");
+                }
+                if (AnimalsT.Checked == true)
+                {
+                    sw.WriteLine("spawn-animals=true");
+                }
+                else
+                {
+                    sw.WriteLine("spawn-animals=false");
+                }
+                if (hcT.Checked == true)
+                {
+                    sw.WriteLine("hardcore=true");
+                }
+                else
+                {
+                    sw.WriteLine("hardcore=false");
+                }
+                sw.WriteLine("snooper-enabled=true");
+                sw.WriteLine("resource-pack-sha1=");
+                if (OnlineT.Checked == true)
+                {
+                    sw.WriteLine("online-mode=true");
                 }
                 else
                 {
