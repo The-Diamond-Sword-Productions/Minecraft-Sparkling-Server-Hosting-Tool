@@ -537,6 +537,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 await sw.WriteLineAsync("view-distance=10");
                 await sw.WriteLineAsync("motd=A Minecraft Server");
             }
+            File.Create(serverInstallPathTextBox.Text + @"\" + "server.properties");
+            File.Create(serverInstallPathTextBox.Text + @"\" + "tempserver.properties");
+            File.Create(serverInstallPathTextBox.Text + @"\" + "whitelist.json");
+            File.Create(serverInstallPathTextBox.Text + @"\" + "tempwhitelist.json");
 
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 
 
@@ -900,8 +904,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         {
             if (File.Exists(serverRunPathTextBox.Text + @"\tempserver.properties") == false)
             {
-                using (StreamWriter sw = File.CreateText(serverInstallPathTextBox.Text + @"\" + "tempserver.properties"))
-                { }
+                File.Create(serverRunPathTextBox.Text + @"\" + "tempserver.properties");
             }
             if (File.Exists(serverRunPathTextBox.Text + @"\server.properties") == true)
             {
@@ -1231,8 +1234,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         {
             if (File.Exists(serverRunPathTextBox.Text + @"\tempwhitelist.json") == false)
             {
-                using (StreamWriter sw = File.CreateText(serverRunPathTextBox.Text + @"\" + "tempwhitelist.json"))
-                { }
+                File.Create(serverRunPathTextBox.Text + @"\" + "tempwhitelist.json");
             }
                 if (File.Exists(serverRunPathTextBox.Text + @"\whitelist.json") == true)
             {
@@ -1249,8 +1251,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     Status.Text = "Generating whitelist file...";
                     Status_.Text = "Generating whitelist file...";
-                    using (StreamWriter sw = File.CreateText(serverRunPathTextBox.Text + @"\" + "whitelist.json"))
-                    { }
+                    File.Create(serverRunPathTextBox.Text + @"\" + "whitelist.json");
                     Status.Text = "Opening whitelist file...";
                     Status_.Text = "Opening whitelist file...";
                     WhitelistForm frm = new WhitelistForm(serverRunPathTextBox.Text);
