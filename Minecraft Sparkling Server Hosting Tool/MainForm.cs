@@ -155,6 +155,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             serverInstallPathTextBox.Enabled = false;
             serverPathBrowseButton.Enabled = false;
             serverInstallButton.Enabled = false;
+            generateBatCheckbox.Enabled = false;
+            noguiCheckbox.Enabled = false;
+            memoryDropdown.Enabled = false;
+            clientDropdown.Enabled = false;
+            memoryMBRadio.Enabled = false;
+            memoryGBRadio.Enabled = false;
             string subdir = serverInstallPathTextBox.Text;
 
             if (!Directory.Exists(subdir))
@@ -164,6 +170,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 serverInstallPathTextBox.Enabled = true;
                 serverPathBrowseButton.Enabled = true;
                 serverInstallButton.Enabled = true;
+                generateBatCheckbox.Enabled = true;
+                noguiCheckbox.Enabled = true;
+                memoryDropdown.Enabled = true;
+                clientDropdown.Enabled = true;
+                memoryMBRadio.Enabled = true;
+                memoryGBRadio.Enabled = true;
                 MessageBox.Show("This directory (" + subdir + ") does not exist.\n\nPlease select a folder again.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -175,6 +187,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 serverInstallPathTextBox.Enabled = true;
                 serverPathBrowseButton.Enabled = true;
                 serverInstallButton.Enabled = true;
+                generateBatCheckbox.Enabled = true;
+                noguiCheckbox.Enabled = true;
+                memoryDropdown.Enabled = true;
+                clientDropdown.Enabled = true;
+                memoryMBRadio.Enabled = true;
+                memoryGBRadio.Enabled = true;
                 MessageBox.Show("This directory (" + subdir + ") is not empty!\n\nPlease delete all the contents of the folder.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -186,6 +204,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 serverInstallPathTextBox.Enabled = true;
                 serverPathBrowseButton.Enabled = true;
                 serverInstallButton.Enabled = true;
+                generateBatCheckbox.Enabled = true;
+                noguiCheckbox.Enabled = true;
+                memoryDropdown.Enabled = true;
+                clientDropdown.Enabled = true;
+                memoryMBRadio.Enabled = true;
+                memoryGBRadio.Enabled = true;
                 MessageBox.Show("This is not a valid number! (" + memoryDropdown.Text + ")\n\nPlease put the number of MB / GB you want for your server!\n\nDefault: 1024 MB", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -203,6 +227,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     serverInstallPathTextBox.Enabled = true;
                     serverPathBrowseButton.Enabled = true;
                     serverInstallButton.Enabled = true;
+                    generateBatCheckbox.Enabled = true;
+                    noguiCheckbox.Enabled = true;
+                    memoryDropdown.Enabled = true;
+                    clientDropdown.Enabled = true;
+                    memoryMBRadio.Enabled = true;
+                    memoryGBRadio.Enabled = true;
                     return;
                 }
             }
@@ -217,6 +247,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     serverInstallPathTextBox.Enabled = true;
                     serverPathBrowseButton.Enabled = true;
                     serverInstallButton.Enabled = true;
+                    generateBatCheckbox.Enabled = true;
+                    noguiCheckbox.Enabled = true;
+                    memoryDropdown.Enabled = true;
+                    clientDropdown.Enabled = true;
+                    memoryMBRadio.Enabled = true;
+                    memoryGBRadio.Enabled = true;
                     return;
                 }
             }
@@ -231,6 +267,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     serverInstallPathTextBox.Enabled = true;
                     serverPathBrowseButton.Enabled = true;
                     serverInstallButton.Enabled = true;
+                    generateBatCheckbox.Enabled = true;
+                    noguiCheckbox.Enabled = true;
+                    memoryDropdown.Enabled = true;
+                    clientDropdown.Enabled = true;
+                    memoryMBRadio.Enabled = true;
+                    memoryGBRadio.Enabled = true;
                     return;
                 }
             }
@@ -244,6 +286,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     serverInstallPathTextBox.Enabled = true;
                     serverPathBrowseButton.Enabled = true;
                     serverInstallButton.Enabled = true;
+                    generateBatCheckbox.Enabled = true;
+                    noguiCheckbox.Enabled = true;
+                    memoryDropdown.Enabled = true;
+                    clientDropdown.Enabled = true;
+                    memoryMBRadio.Enabled = true;
+                    memoryGBRadio.Enabled = true;
                     return;
                 }
             }
@@ -267,6 +315,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
             if (clientDropdown.Text == "Vanilla (Normal Minecraft)")
             {
+                File.Create(serverInstallPathTextBox.Text + @"\" + "Vanilla.txt");
                 switch (versionDropdown.Text)
                 {
                     case "1.16.1":
@@ -396,6 +445,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
             if (clientDropdown.Text == "Spigot (Plugins)")
             {
+                File.Create(serverInstallPathTextBox.Text + @"\" + "Spigot.txt");
                 switch (versionDropdown.Text)
                 {
                     case "1.16.1":
@@ -579,6 +629,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             serverInstallPathTextBox.Enabled = true;
             serverPathBrowseButton.Enabled = true;
             serverInstallButton.Enabled = true;
+            generateBatCheckbox.Enabled = true;
+            noguiCheckbox.Enabled = true;
+            memoryDropdown.Enabled = true;
+            clientDropdown.Enabled = true;
+            memoryMBRadio.Enabled = true;
+            memoryGBRadio.Enabled = true;
             label12.Text = "Installing done!";
             // 1.15 / 1.14 / 1.13 / 1.12 / 1.11 / 1.10 / 1.8.9 / 1.8 / 1.7.10
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 

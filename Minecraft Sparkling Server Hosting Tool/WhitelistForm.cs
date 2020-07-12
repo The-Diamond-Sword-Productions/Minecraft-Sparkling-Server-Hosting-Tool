@@ -33,6 +33,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             {
                 whitelistedUsers = JsonConvert.DeserializeObject<List<User>>(data);
             }
+            RedrawWhitelistedUsersBox();
         }
 
         private void OnSaveButtonClick(object sender, EventArgs e)
