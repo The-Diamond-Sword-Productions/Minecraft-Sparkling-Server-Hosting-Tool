@@ -136,6 +136,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     RedrawWhitelistedUsersBoxes();
                 }
             }
+            else
+            {
+                MessageBox.Show("Please select an item from the whitelist.", "Wrong slected item.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         public static async Task<User> GetUser(string username)
         {
