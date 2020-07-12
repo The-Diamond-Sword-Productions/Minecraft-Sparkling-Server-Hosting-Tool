@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
-    partial class Menu
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,44 +31,44 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.checkUpdates = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.memo = new System.Windows.Forms.ComboBox();
-            this.client = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.nogui = new System.Windows.Forms.CheckBox();
-            this.memory = new System.Windows.Forms.Label();
-            this.bat = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.version = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.serverinstallpath = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.progress = new System.Windows.Forms.GroupBox();
-            this.pbar = new System.Windows.Forms.ProgressBar();
+            this.memoryMBRadio = new System.Windows.Forms.RadioButton();
+            this.memoryGBRadio = new System.Windows.Forms.RadioButton();
+            this.memoryDropdown = new System.Windows.Forms.ComboBox();
+            this.clientDropdown = new System.Windows.Forms.ComboBox();
+            this.clientLabel = new System.Windows.Forms.Label();
+            this.noguiWarningLabel = new System.Windows.Forms.Label();
+            this.noguiCheckbox = new System.Windows.Forms.CheckBox();
+            this.memoryLabel = new System.Windows.Forms.Label();
+            this.generateBatCheckbox = new System.Windows.Forms.CheckBox();
+            this.versionLabel = new System.Windows.Forms.Label();
+            this.versionDropdown = new System.Windows.Forms.ComboBox();
+            this.serverPathBrowseButton = new System.Windows.Forms.Button();
+            this.serverInstallPathTextBox = new System.Windows.Forms.TextBox();
+            this.serverInstallPathLabel = new System.Windows.Forms.Label();
+            this.progressGroupBox = new System.Windows.Forms.GroupBox();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.serverInstallButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.Status_ = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.eulaRejectButton = new System.Windows.Forms.Button();
+            this.eulaAcceptButton = new System.Windows.Forms.Button();
+            this.eulaOkButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.findInstalledServerButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.serverpath = new System.Windows.Forms.TextBox();
+            this.serverPathTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.startStopServerButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.button15 = new System.Windows.Forms.Button();
@@ -94,10 +94,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.progress.SuspendLayout();
+            this.progressGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -133,22 +132,22 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.radioButton1);
-            this.tabPage1.Controls.Add(this.radioButton2);
-            this.tabPage1.Controls.Add(this.memo);
-            this.tabPage1.Controls.Add(this.client);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.nogui);
-            this.tabPage1.Controls.Add(this.memory);
-            this.tabPage1.Controls.Add(this.bat);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.version);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.serverinstallpath);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.progress);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.memoryMBRadio);
+            this.tabPage1.Controls.Add(this.memoryGBRadio);
+            this.tabPage1.Controls.Add(this.memoryDropdown);
+            this.tabPage1.Controls.Add(this.clientDropdown);
+            this.tabPage1.Controls.Add(this.clientLabel);
+            this.tabPage1.Controls.Add(this.noguiWarningLabel);
+            this.tabPage1.Controls.Add(this.noguiCheckbox);
+            this.tabPage1.Controls.Add(this.memoryLabel);
+            this.tabPage1.Controls.Add(this.generateBatCheckbox);
+            this.tabPage1.Controls.Add(this.versionLabel);
+            this.tabPage1.Controls.Add(this.versionDropdown);
+            this.tabPage1.Controls.Add(this.serverPathBrowseButton);
+            this.tabPage1.Controls.Add(this.serverInstallPathTextBox);
+            this.tabPage1.Controls.Add(this.serverInstallPathLabel);
+            this.tabPage1.Controls.Add(this.progressGroupBox);
+            this.tabPage1.Controls.Add(this.serverInstallButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -158,34 +157,34 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage1.ToolTipText = "Install your server here.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // memoryMBRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(522, 121);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(41, 17);
-            this.radioButton1.TabIndex = 26;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "MB";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.memoryMBRadio.AutoSize = true;
+            this.memoryMBRadio.Checked = true;
+            this.memoryMBRadio.Location = new System.Drawing.Point(522, 121);
+            this.memoryMBRadio.Name = "memoryMBRadio";
+            this.memoryMBRadio.Size = new System.Drawing.Size(41, 17);
+            this.memoryMBRadio.TabIndex = 26;
+            this.memoryMBRadio.TabStop = true;
+            this.memoryMBRadio.Text = "MB";
+            this.memoryMBRadio.UseVisualStyleBackColor = true;
+            this.memoryMBRadio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // memoryGBRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(522, 142);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(40, 17);
-            this.radioButton2.TabIndex = 25;
-            this.radioButton2.Text = "GB";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.memoryGBRadio.AutoSize = true;
+            this.memoryGBRadio.Location = new System.Drawing.Point(522, 142);
+            this.memoryGBRadio.Name = "memoryGBRadio";
+            this.memoryGBRadio.Size = new System.Drawing.Size(40, 17);
+            this.memoryGBRadio.TabIndex = 25;
+            this.memoryGBRadio.Text = "GB";
+            this.memoryGBRadio.UseVisualStyleBackColor = true;
+            this.memoryGBRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // memo
+            // memoryDropdown
             // 
-            this.memo.FormattingEnabled = true;
-            this.memo.Items.AddRange(new object[] {
+            this.memoryDropdown.FormattingEnabled = true;
+            this.memoryDropdown.Items.AddRange(new object[] {
             "512",
             "1024",
             "2048",
@@ -207,90 +206,90 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             "18432",
             "19456",
             "20480"});
-            this.memo.Location = new System.Drawing.Point(361, 130);
-            this.memo.Name = "memo";
-            this.memo.Size = new System.Drawing.Size(154, 21);
-            this.memo.TabIndex = 23;
-            this.memo.Text = "1024";
+            this.memoryDropdown.Location = new System.Drawing.Point(361, 130);
+            this.memoryDropdown.Name = "memoryDropdown";
+            this.memoryDropdown.Size = new System.Drawing.Size(154, 21);
+            this.memoryDropdown.TabIndex = 23;
+            this.memoryDropdown.Text = "1024";
             // 
-            // client
+            // clientDropdown
             // 
-            this.client.FormattingEnabled = true;
-            this.client.Items.AddRange(new object[] {
+            this.clientDropdown.FormattingEnabled = true;
+            this.clientDropdown.Items.AddRange(new object[] {
             "Vanilla (Normal Minecraft)",
             "Spigot (Plugins)"});
-            this.client.Location = new System.Drawing.Point(172, 93);
-            this.client.Name = "client";
-            this.client.Size = new System.Drawing.Size(144, 21);
-            this.client.TabIndex = 22;
-            this.client.Text = "Vanilla (Normal Minecraft)";
-            this.client.SelectedIndexChanged += new System.EventHandler(this.client_SelectedIndexChanged);
+            this.clientDropdown.Location = new System.Drawing.Point(172, 93);
+            this.clientDropdown.Name = "clientDropdown";
+            this.clientDropdown.Size = new System.Drawing.Size(144, 21);
+            this.clientDropdown.TabIndex = 22;
+            this.clientDropdown.Text = "Vanilla (Normal Minecraft)";
+            this.clientDropdown.SelectedIndexChanged += new System.EventHandler(this.client_SelectedIndexChanged);
             // 
-            // label10
+            // clientLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(130, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Client:";
+            this.clientLabel.AutoSize = true;
+            this.clientLabel.Location = new System.Drawing.Point(130, 96);
+            this.clientLabel.Name = "clientLabel";
+            this.clientLabel.Size = new System.Drawing.Size(36, 13);
+            this.clientLabel.TabIndex = 21;
+            this.clientLabel.Text = "Client:";
             // 
-            // label8
+            // noguiWarningLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(70, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(428, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "ATTENTION: We would not change this value! The recommended option is  unchecked.";
+            this.noguiWarningLabel.AutoSize = true;
+            this.noguiWarningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.noguiWarningLabel.Location = new System.Drawing.Point(70, 168);
+            this.noguiWarningLabel.Name = "noguiWarningLabel";
+            this.noguiWarningLabel.Size = new System.Drawing.Size(428, 13);
+            this.noguiWarningLabel.TabIndex = 20;
+            this.noguiWarningLabel.Text = "ATTENTION: We would not change this value! The recommended option is  unchecked.";
             // 
-            // nogui
+            // noguiCheckbox
             // 
-            this.nogui.AutoSize = true;
-            this.nogui.Location = new System.Drawing.Point(6, 167);
-            this.nogui.Name = "nogui";
-            this.nogui.Size = new System.Drawing.Size(62, 17);
-            this.nogui.TabIndex = 19;
-            this.nogui.Text = "No GUI";
-            this.nogui.UseVisualStyleBackColor = true;
-            this.nogui.CheckedChanged += new System.EventHandler(this.Nogui_CheckedChanged);
+            this.noguiCheckbox.AutoSize = true;
+            this.noguiCheckbox.Location = new System.Drawing.Point(6, 167);
+            this.noguiCheckbox.Name = "noguiCheckbox";
+            this.noguiCheckbox.Size = new System.Drawing.Size(62, 17);
+            this.noguiCheckbox.TabIndex = 19;
+            this.noguiCheckbox.Text = "No GUI";
+            this.noguiCheckbox.UseVisualStyleBackColor = true;
+            this.noguiCheckbox.CheckedChanged += new System.EventHandler(this.Nogui_CheckedChanged);
             // 
-            // memory
+            // memoryLabel
             // 
-            this.memory.AutoSize = true;
-            this.memory.Location = new System.Drawing.Point(267, 134);
-            this.memory.Name = "memory";
-            this.memory.Size = new System.Drawing.Size(91, 13);
-            this.memory.TabIndex = 17;
-            this.memory.Text = "Memory for Java :";
+            this.memoryLabel.AutoSize = true;
+            this.memoryLabel.Location = new System.Drawing.Point(267, 134);
+            this.memoryLabel.Name = "memoryLabel";
+            this.memoryLabel.Size = new System.Drawing.Size(91, 13);
+            this.memoryLabel.TabIndex = 17;
+            this.memoryLabel.Text = "Memory for Java :";
             // 
-            // bat
+            // generateBatCheckbox
             // 
-            this.bat.AutoSize = true;
-            this.bat.Checked = true;
-            this.bat.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.bat.Location = new System.Drawing.Point(6, 130);
-            this.bat.Name = "bat";
-            this.bat.Size = new System.Drawing.Size(107, 17);
-            this.bat.TabIndex = 15;
-            this.bat.Text = "Generate .bat file";
-            this.bat.UseVisualStyleBackColor = true;
-            this.bat.CheckedChanged += new System.EventHandler(this.Bat_CheckedChanged);
+            this.generateBatCheckbox.AutoSize = true;
+            this.generateBatCheckbox.Checked = true;
+            this.generateBatCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.generateBatCheckbox.Location = new System.Drawing.Point(6, 130);
+            this.generateBatCheckbox.Name = "generateBatCheckbox";
+            this.generateBatCheckbox.Size = new System.Drawing.Size(107, 17);
+            this.generateBatCheckbox.TabIndex = 15;
+            this.generateBatCheckbox.Text = "Generate .bat file";
+            this.generateBatCheckbox.UseVisualStyleBackColor = true;
+            this.generateBatCheckbox.CheckedChanged += new System.EventHandler(this.Bat_CheckedChanged);
             // 
-            // label6
+            // versionLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Version:";
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Location = new System.Drawing.Point(3, 97);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(45, 13);
+            this.versionLabel.TabIndex = 14;
+            this.versionLabel.Text = "Version:";
             // 
-            // version
+            // versionDropdown
             // 
-            this.version.FormattingEnabled = true;
-            this.version.Items.AddRange(new object[] {
+            this.versionDropdown.FormattingEnabled = true;
+            this.versionDropdown.Items.AddRange(new object[] {
             "1.16.1",
             "1.16",
             "1.15.2",
@@ -321,57 +320,57 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             "1.8.9",
             "1.8",
             "1.7.10"});
-            this.version.Location = new System.Drawing.Point(54, 93);
-            this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(70, 21);
-            this.version.TabIndex = 13;
-            this.version.Text = "1.16.1";
+            this.versionDropdown.Location = new System.Drawing.Point(54, 93);
+            this.versionDropdown.Name = "versionDropdown";
+            this.versionDropdown.Size = new System.Drawing.Size(70, 21);
+            this.versionDropdown.TabIndex = 13;
+            this.versionDropdown.Text = "1.16.1";
             // 
-            // button5
+            // serverPathBrowseButton
             // 
-            this.button5.Location = new System.Drawing.Point(477, 62);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(83, 20);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Browse...";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click_1);
+            this.serverPathBrowseButton.Location = new System.Drawing.Point(477, 62);
+            this.serverPathBrowseButton.Name = "serverPathBrowseButton";
+            this.serverPathBrowseButton.Size = new System.Drawing.Size(83, 20);
+            this.serverPathBrowseButton.TabIndex = 12;
+            this.serverPathBrowseButton.Text = "Browse...";
+            this.serverPathBrowseButton.UseVisualStyleBackColor = true;
+            this.serverPathBrowseButton.Click += new System.EventHandler(this.Button5_Click_1);
             // 
-            // serverinstallpath
+            // serverInstallPathTextBox
             // 
-            this.serverinstallpath.Location = new System.Drawing.Point(3, 61);
-            this.serverinstallpath.Name = "serverinstallpath";
-            this.serverinstallpath.Size = new System.Drawing.Size(468, 20);
-            this.serverinstallpath.TabIndex = 11;
-            this.serverinstallpath.Text = "C:\\Users\\DESPERIEZ\\Documents\\ServerKid\\";
+            this.serverInstallPathTextBox.Location = new System.Drawing.Point(3, 61);
+            this.serverInstallPathTextBox.Name = "serverInstallPathTextBox";
+            this.serverInstallPathTextBox.Size = new System.Drawing.Size(468, 20);
+            this.serverInstallPathTextBox.TabIndex = 11;
+            this.serverInstallPathTextBox.TextChanged += new System.EventHandler(this.OnPathChanged);
             // 
-            // label4
+            // serverInstallPathLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Server installation path:";
+            this.serverInstallPathLabel.AutoSize = true;
+            this.serverInstallPathLabel.Location = new System.Drawing.Point(0, 45);
+            this.serverInstallPathLabel.Name = "serverInstallPathLabel";
+            this.serverInstallPathLabel.Size = new System.Drawing.Size(117, 13);
+            this.serverInstallPathLabel.TabIndex = 10;
+            this.serverInstallPathLabel.Text = "Server installation path:";
             // 
-            // progress
+            // progressGroupBox
             // 
-            this.progress.Controls.Add(this.pbar);
-            this.progress.Controls.Add(this.label1);
-            this.progress.Controls.Add(this.label12);
-            this.progress.Location = new System.Drawing.Point(6, 210);
-            this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(559, 71);
-            this.progress.TabIndex = 3;
-            this.progress.TabStop = false;
-            this.progress.Text = "Progress";
+            this.progressGroupBox.Controls.Add(this.progressBar);
+            this.progressGroupBox.Controls.Add(this.label1);
+            this.progressGroupBox.Controls.Add(this.label12);
+            this.progressGroupBox.Location = new System.Drawing.Point(6, 210);
+            this.progressGroupBox.Name = "progressGroupBox";
+            this.progressGroupBox.Size = new System.Drawing.Size(559, 71);
+            this.progressGroupBox.TabIndex = 3;
+            this.progressGroupBox.TabStop = false;
+            this.progressGroupBox.Text = "Progress";
             // 
-            // pbar
+            // progressBar
             // 
-            this.pbar.Location = new System.Drawing.Point(9, 19);
-            this.pbar.Name = "pbar";
-            this.pbar.Size = new System.Drawing.Size(544, 23);
-            this.pbar.TabIndex = 5;
+            this.progressBar.Location = new System.Drawing.Point(9, 19);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(544, 23);
+            this.progressBar.TabIndex = 5;
             // 
             // label1
             // 
@@ -392,16 +391,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label12.TabIndex = 3;
             this.label12.Text = "Idle";
             // 
-            // button1
+            // serverInstallButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(6, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(557, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Click here to  install a server on your computer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.serverInstallButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.serverInstallButton.Location = new System.Drawing.Point(6, 7);
+            this.serverInstallButton.Name = "serverInstallButton";
+            this.serverInstallButton.Size = new System.Drawing.Size(557, 28);
+            this.serverInstallButton.TabIndex = 1;
+            this.serverInstallButton.Text = "Click here to  install a server on your computer";
+            this.serverInstallButton.UseVisualStyleBackColor = true;
+            this.serverInstallButton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tabPage2
             // 
@@ -409,11 +408,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage2.Controls.Add(this.Status_);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.findInstalledServerButton);
             this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.serverpath);
+            this.tabPage2.Controls.Add(this.serverPathTextBox);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.startStopServerButton);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(571, 287);
@@ -453,9 +452,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.linkLabel2);
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.eulaRejectButton);
+            this.groupBox2.Controls.Add(this.eulaAcceptButton);
+            this.groupBox2.Controls.Add(this.eulaOkButton);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(25, 131);
             this.groupBox2.Name = "groupBox2";
@@ -474,36 +473,36 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.linkLabel2.Text = "https://www.minecraft.net/eula/";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // button10
+            // eulaRejectButton
             // 
-            this.button10.Location = new System.Drawing.Point(372, 84);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "Reject";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.eulaRejectButton.Location = new System.Drawing.Point(372, 84);
+            this.eulaRejectButton.Name = "eulaRejectButton";
+            this.eulaRejectButton.Size = new System.Drawing.Size(75, 23);
+            this.eulaRejectButton.TabIndex = 11;
+            this.eulaRejectButton.Text = "Reject";
+            this.eulaRejectButton.UseVisualStyleBackColor = true;
+            this.eulaRejectButton.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button9
+            // eulaAcceptButton
             // 
-            this.button9.Location = new System.Drawing.Point(63, 84);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Accept";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.eulaAcceptButton.Location = new System.Drawing.Point(63, 84);
+            this.eulaAcceptButton.Name = "eulaAcceptButton";
+            this.eulaAcceptButton.Size = new System.Drawing.Size(75, 23);
+            this.eulaAcceptButton.TabIndex = 10;
+            this.eulaAcceptButton.Text = "Accept";
+            this.eulaAcceptButton.UseVisualStyleBackColor = true;
+            this.eulaAcceptButton.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button8
+            // eulaOkButton
             // 
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(212, 84);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Ok";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.eulaOkButton.ForeColor = System.Drawing.Color.Black;
+            this.eulaOkButton.Location = new System.Drawing.Point(212, 84);
+            this.eulaOkButton.Name = "eulaOkButton";
+            this.eulaOkButton.Size = new System.Drawing.Size(75, 23);
+            this.eulaOkButton.TabIndex = 9;
+            this.eulaOkButton.Text = "Ok";
+            this.eulaOkButton.UseVisualStyleBackColor = true;
+            this.eulaOkButton.Click += new System.EventHandler(this.button8_Click);
             // 
             // label7
             // 
@@ -516,15 +515,15 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label7.TabIndex = 8;
             this.label7.Text = "MessageBox 2.0";
             // 
-            // button7
+            // findInstalledServerButton
             // 
-            this.button7.Location = new System.Drawing.Point(6, 89);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(121, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Find Installed Server";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.findInstalledServerButton.Location = new System.Drawing.Point(6, 89);
+            this.findInstalledServerButton.Name = "findInstalledServerButton";
+            this.findInstalledServerButton.Size = new System.Drawing.Size(121, 23);
+            this.findInstalledServerButton.TabIndex = 7;
+            this.findInstalledServerButton.Text = "Find Installed Server";
+            this.findInstalledServerButton.UseVisualStyleBackColor = true;
+            this.findInstalledServerButton.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -536,14 +535,13 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // serverpath
+            // serverPathTextBox
             // 
-            this.serverpath.Location = new System.Drawing.Point(6, 63);
-            this.serverpath.Name = "serverpath";
-            this.serverpath.Size = new System.Drawing.Size(466, 20);
-            this.serverpath.TabIndex = 5;
-            this.serverpath.Text = "C:\\Users\\DESPERIEZ\\Documents\\ServerKid\\";
-            this.serverpath.TextChanged += new System.EventHandler(this.serverpath_TextChanged);
+            this.serverPathTextBox.Location = new System.Drawing.Point(6, 63);
+            this.serverPathTextBox.Name = "serverPathTextBox";
+            this.serverPathTextBox.Size = new System.Drawing.Size(466, 20);
+            this.serverPathTextBox.TabIndex = 5;
+            this.serverPathTextBox.TextChanged += new System.EventHandler(this.serverpath_TextChanged);
             // 
             // label3
             // 
@@ -554,16 +552,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label3.TabIndex = 3;
             this.label3.Text = "Server path:";
             // 
-            // button2
+            // startStopServerButton
             // 
-            this.button2.ForeColor = System.Drawing.Color.Green;
-            this.button2.Location = new System.Drawing.Point(2, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(561, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Start Server";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.startStopServerButton.ForeColor = System.Drawing.Color.Green;
+            this.startStopServerButton.Location = new System.Drawing.Point(2, 22);
+            this.startStopServerButton.Name = "startStopServerButton";
+            this.startStopServerButton.Size = new System.Drawing.Size(561, 23);
+            this.startStopServerButton.TabIndex = 0;
+            this.startStopServerButton.Text = "Start Server";
+            this.startStopServerButton.UseVisualStyleBackColor = true;
+            this.startStopServerButton.Click += new System.EventHandler(this.Button2_Click);
             // 
             // tabPage4
             // 
@@ -842,7 +840,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.openFileDialog1.InitialDirectory = "C:/";
             this.openFileDialog1.ValidateNames = false;
             // 
-            // Menu
+            // MainForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,14 +850,14 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Menu";
+            this.Name = "MainForm";
             this.Text = "Minecraft Sparkling Server Hosting Tool";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.progress.ResumeLayout(false);
-            this.progress.PerformLayout();
+            this.progressGroupBox.ResumeLayout(false);
+            this.progressGroupBox.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -881,45 +879,44 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private System.Windows.Forms.Button checkUpdates;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox progress;
+        private System.Windows.Forms.GroupBox progressGroupBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button serverInstallButton;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button startStopServerButton;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox serverpath;
+        private System.Windows.Forms.TextBox serverPathTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox serverinstallpath;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox version;
+        private System.Windows.Forms.Button serverPathBrowseButton;
+        private System.Windows.Forms.TextBox serverInstallPathTextBox;
+        private System.Windows.Forms.Label serverInstallPathLabel;
+        private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.ComboBox versionDropdown;
         private System.Windows.Forms.Label label1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ProgressBar pbar;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox pause;
-        private System.Windows.Forms.CheckBox bat;
-        private System.Windows.Forms.Label memory;
-        private System.Windows.Forms.CheckBox nogui;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox generateBatCheckbox;
+        private System.Windows.Forms.Label memoryLabel;
+        private System.Windows.Forms.CheckBox noguiCheckbox;
+        private System.Windows.Forms.Label noguiWarningLabel;
         private System.Windows.Forms.Label Client_Version;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox client;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.ComboBox memo;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button findInstalledServerButton;
+        private System.Windows.Forms.ComboBox clientDropdown;
+        private System.Windows.Forms.Label clientLabel;
+        private System.Windows.Forms.RadioButton memoryMBRadio;
+        private System.Windows.Forms.RadioButton memoryGBRadio;
+        private System.Windows.Forms.ComboBox memoryDropdown;
+        private System.Windows.Forms.Button eulaOkButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button eulaAcceptButton;
+        private System.Windows.Forms.Button eulaRejectButton;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button11;
