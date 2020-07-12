@@ -6,6 +6,7 @@ using System.IO;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
@@ -597,7 +598,45 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 await sw.WriteLineAsync("motd=A Minecraft Server");
             }
             File.Create(ServerDirectory + @"\" + "server.properties");
-            File.Create(ServerDirectory + @"\" + "tempserver.properties");
+            using (StreamWriter sw = File.CreateText(serverInstallPathTextBox.Text + @"\" + "tempserver.properties"))
+            {
+                await sw.WriteLineAsync("#Minecraft server properties");
+                await sw.WriteLineAsync("#Fri Jul 01 00:00:00 CEST 2020");
+                await sw.WriteLineAsync("generator-settings=");
+                await sw.WriteLineAsync("op-permission-level=4");
+                await sw.WriteLineAsync("allow-nether=true");
+                await sw.WriteLineAsync("level-name=world");
+                await sw.WriteLineAsync("enable-query=false");
+                await sw.WriteLineAsync("allow-flight=false");
+                await sw.WriteLineAsync("announce-player-achievements=true");
+                await sw.WriteLineAsync("server-port=25565");
+                await sw.WriteLineAsync("max-world-size=29999984");
+                await sw.WriteLineAsync("level-type=DEFAULT");
+                await sw.WriteLineAsync("enable-rcon=false");
+                await sw.WriteLineAsync("level-seed=");
+                await sw.WriteLineAsync("force-gamemode=false");
+                await sw.WriteLineAsync("server-ip=");
+                await sw.WriteLineAsync("network-compression-threshold=256");
+                await sw.WriteLineAsync("max-build-height=256");
+                await sw.WriteLineAsync("spawn-npcs=true");
+                await sw.WriteLineAsync("white-list=false");
+                await sw.WriteLineAsync("spawn-animals=true");
+                await sw.WriteLineAsync("hardcore=false");
+                await sw.WriteLineAsync("snooper-enabled=true");
+                await sw.WriteLineAsync("resource-pack-sha1=");
+                await sw.WriteLineAsync("online-mode=true");
+                await sw.WriteLineAsync("resource-pack=");
+                await sw.WriteLineAsync("pvp=true");
+                await sw.WriteLineAsync("difficulty=1");
+                await sw.WriteLineAsync("enable-command-block=true");
+                await sw.WriteLineAsync("gamemode=0");
+                await sw.WriteLineAsync("player-idle-timeout=0");
+                await sw.WriteLineAsync("max-players=20");
+                await sw.WriteLineAsync("spawn-monsters=true");
+                await sw.WriteLineAsync("generate-structures=true");
+                await sw.WriteLineAsync("view-distance=10");
+                await sw.WriteLineAsync("motd=A Minecraft Server");
+            }
             File.Create(ServerDirectory + @"\" + "whitelist.json");
 
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 
@@ -1291,6 +1330,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 button14.Enabled = false;
                 button3.Enabled = false;
                 button15.Enabled = false;
+                button3.Text = "Open Server properties";
                 label13.Text = "Please enter a server path to start your server...";
                 label15.Text = "No server found...";
             }
@@ -1301,7 +1341,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = true;
                     button3.Enabled = true;
                     button15.Enabled = true;
-                    label13.Text = "Found a Spigot server.";
+                    button3.Text = "Open Server properties";
                     button14.Text = "Open Server Plugins File";
                     label15.Text = "Running Server On Spigot.";
                 }
@@ -1315,7 +1355,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
                     button3.Enabled = true;
                     button15.Enabled = true;
-                    label13.Text = "Found a Vanilla server.";
+                    button3.Text = "Open Server properties";
                     label15.Text = "Running Server On Vanilla.";
                 }
 
@@ -1325,6 +1365,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = false;
                     button3.Enabled = false;
                     button15.Enabled = false;
+                    button3.Text = "Open Server properties";
                     label15.Text = "No server found...";
                 }
                 else
@@ -1333,7 +1374,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = true;
                     button3.Enabled = true;
                     button15.Enabled = true;
-                    label15.Text = "Such server found";
+                    button3.Text = "Open Server properties";
+                    label15.Text = "Server Found";
+                    button3.Text = "Open Server properties (Unregistered Server)";
+                    button3.Enabled = false;
+                    button14.Text = "Open Server Plugins File (Unregistered Server)";
+                    DialogResult Result = MessageBox.Show("This server has not been created with Minecraft Sparkling Server Hosting Tool. Would you like to make it compatible with our tool? If not, you might not have all the features we offer in this tool.", "Invalid Server", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (Result == DialogResult.Yes)
+                    {
+                        ServerCompatibleForm frm = new ServerCompatibleForm(this);
+                    }
                 }
             }
         }

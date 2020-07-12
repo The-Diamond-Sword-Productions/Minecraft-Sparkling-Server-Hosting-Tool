@@ -74,6 +74,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MinecraftVersion.cs" />
+    <Compile Include="ServerCompatibleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerCompatibleForm.Designer.cs">
+      <DependentUpon>ServerCompatibleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServerPropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerCompatibleForm.resx">
+      <DependentUpon>ServerCompatibleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServerPropertiesForm.resx">
       <DependentUpon>ServerPropertiesForm.cs</DependentUpon>

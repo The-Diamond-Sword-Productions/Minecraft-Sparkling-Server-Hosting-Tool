@@ -17,7 +17,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         {
             InitializeComponent();
             label2.Text = data;
-            if (File.Exists(label2.Text + @"\server.properties") == true)
+            if (File.Exists(label2.Text + @"\tempserver.properties") == true)
             {
                 label6.Text = "Reading server.properties file...";
                 string nether = File.ReadLines(label2.Text + @"\tempserver.properties").Skip(4).Take(1).First();
