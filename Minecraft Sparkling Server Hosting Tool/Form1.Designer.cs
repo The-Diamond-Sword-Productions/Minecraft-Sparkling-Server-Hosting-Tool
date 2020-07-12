@@ -95,7 +95,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.progress.SuspendLayout();
@@ -703,7 +702,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.linkLabel3);
             this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.button12);
@@ -844,15 +842,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.openFileDialog1.InitialDirectory = "C:/";
             this.openFileDialog1.ValidateNames = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Test";
-            // 
             // Menu
             // 
             this.AllowDrop = true;
@@ -952,7 +941,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label2;
     }
 }
 
