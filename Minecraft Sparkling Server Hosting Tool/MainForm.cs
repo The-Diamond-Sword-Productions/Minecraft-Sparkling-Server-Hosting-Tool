@@ -135,6 +135,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 return;
             }
 
+
             DialogResult result = MessageBox.Show("You are about to install Minecraft Server " + versionDropdown.Text + " at " + serverInstallPathTextBox.Text + ". \n\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             
             if (result != DialogResult.Yes) return;
@@ -246,11 +247,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 return;
             }
 
-            label12.Text = "Downloading: " + versionDropdown.Text + " server file , please wait...";
+            
 
             WebClient client = new WebClient();
             client.DownloadProgressChanged += (o, args) =>
             {
+                label12.Text = "Downloading: " + versionDropdown.Text + " server file , please wait..." + args.ProgressPercentage + "%";
                 progressBar.Value = args.ProgressPercentage;
             };
 
