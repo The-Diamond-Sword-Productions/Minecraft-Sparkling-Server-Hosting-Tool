@@ -400,7 +400,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.serverInstallButton.TabIndex = 1;
             this.serverInstallButton.Text = "Click here to  install a server on your computer";
             this.serverInstallButton.UseVisualStyleBackColor = true;
-            this.serverInstallButton.Click += new System.EventHandler(this.Button1_Click);
+            this.serverInstallButton.Click += new System.EventHandler(this.OnInstallServerButtonClick);
             // 
             // tabPage2
             // 

@@ -17,52 +17,23 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
     public partial class WhitelistForm : Form
     {
         static string URL = @"https://api.mojang.com/users/profiles/minecraft/";
+
+
         public WhitelistForm(string data)
         {
             InitializeComponent();
-            label4.Text = data;
-            if (File.Exists(label4.Text + @"\tempwhitelist.json") == true)
-            {
-                label6.Text = "Reading whitelist.json file...";
-                listBox1.Items.Clear();
-                List<string> lines = new List<string>();
-                using (StreamReader r = new StreamReader(label4.Text + @"\tempwhitelist.json"))
-                {
-                    string line;
-                    while ((line = r.ReadLine()) != null)
-                    {
-                        listBox1.Items.Add(line);
-                    }
-                }
-                label6.Text = "Idle";
-            }
-            if (File.Exists(label4.Text + @"\whitelist.json") == true)
-            {
-                label6.Text = "Reading whitelist.json file...";
-                listBox1.Items.Clear();
-                using (StreamReader r = new StreamReader(label4.Text + @"\whitelist.json"))
-                {
-                    var read = r.ReadToEnd();
-                    var dic = JsonConvert.DeserializeObject<List<User>>(read);
-                    if (dic != null)
-                    {
-                        foreach (User user in dic)
-                        {
-                            whitelistedUsers.Add(user.name, user);
-                        }
-                    }
-                }
-                RedrawWhitelistedUsersBoxes();
-                label6.Text = "Idle";
-            }
+            serverPathLabel.Text = data;
+            
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label6.Text = "Saving...";
-            System.IO.File.WriteAllText(label4.Text + @"\whitelist.json", whitelistedPlayersTextBox.Text);
-            System.IO.File.WriteAllLines(label4.Text + @"\tempwhitelist.json", listBox1.Items.Cast<string>().ToArray());
-            label6.Text = "Saved!";
+            statusLabel.Text = "Saving...";
+            System.IO.File.WriteAllText(serverPathLabel.Text + @"\whitelist.json", whitelistedPlayersTextBox.Text);
+            System.IO.File.WriteAllLines(serverPathLabel.Text + @"\tempwhitelist.json", listBox1.Items.Cast<string>().ToArray());
+            statusLabel.Text = "Saved!";
         }
 
         //Added dictionary to keep track of people in whitelist file
@@ -71,11 +42,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private async void button1_Click(object sender, EventArgs e)
         {
             var username = usernameTextBox.Text;
-            label6.Text = "Getting minecraft uuid from " + username + "'s mojang account...";
+            statusLabel.Text = "Getting minecraft uuid from " + username + "'s mojang account...";
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
                 bool status = await CheckUrlStatus(@"https://api.mojang.com/users/profiles/minecraft/" + usernameTextBox.Text);
-                if (status == true)
+                if (status)
                 {
                     User user = await GetUser(username);
 
@@ -88,18 +59,18 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     whitelistedUsers.Add(username, user);
 
                     usernameTextBox.Text = "";
-                    label6.Text = "Idle";
+                    statusLabel.Text = "Idle";
                 }
                 else
                 {
                     MessageBox.Show("The entered mojang account does not exist. Make sure this account is a premium account.", "Account error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    label6.Text = "Idle";
+                    statusLabel.Text = "Idle";
                 }
             }
             else
             {
                 MessageBox.Show("You are not connected to the internet, and so you can't add items to your whitelist.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                label6.Text = "Idle";
+                statusLabel.Text = "Idle";
             }
 
             RedrawWhitelistedUsersBoxes();

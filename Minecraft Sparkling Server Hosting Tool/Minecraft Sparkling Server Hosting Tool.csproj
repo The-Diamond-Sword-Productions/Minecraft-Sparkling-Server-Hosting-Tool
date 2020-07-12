@@ -73,6 +73,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MinecraftVersion.cs" />
     <Compile Include="ServerPropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>

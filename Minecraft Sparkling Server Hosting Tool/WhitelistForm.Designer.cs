@@ -36,8 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.serverPathLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -108,25 +108,25 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Server location:";
             // 
-            // label4
+            // serverPathLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(98, 281);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.serverPathLabel.AutoSize = true;
+            this.serverPathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverPathLabel.Location = new System.Drawing.Point(98, 281);
+            this.serverPathLabel.Name = "serverPathLabel";
+            this.serverPathLabel.Size = new System.Drawing.Size(41, 13);
+            this.serverPathLabel.TabIndex = 7;
+            this.serverPathLabel.Text = "label4";
             // 
-            // label6
+            // statusLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(58, 303);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Idle";
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(58, 303);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(24, 13);
+            this.statusLabel.TabIndex = 27;
+            this.statusLabel.Text = "Idle";
             // 
             // label5
             // 
@@ -156,15 +156,15 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Server whitelist text file :";
             // 
-            // whitelistedPlayerTextBox
+            // whitelistedPlayersTextBox
             // 
             this.whitelistedPlayersTextBox.Location = new System.Drawing.Point(59, 211);
-            this.whitelistedPlayersTextBox.Name = "whitelistedPlayerTextBox";
+            this.whitelistedPlayersTextBox.Name = "whitelistedPlayersTextBox";
             this.whitelistedPlayersTextBox.Size = new System.Drawing.Size(469, 55);
             this.whitelistedPlayersTextBox.TabIndex = 31;
             this.whitelistedPlayersTextBox.Text = "";
             // 
-            // Form3
+            // WhitelistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,9 +172,9 @@
             this.Controls.Add(this.whitelistedPlayersTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.serverPathLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
@@ -184,7 +184,7 @@
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form3";
+            this.Name = "WhitelistForm";
             this.Text = "Server Whitelist";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,8 +200,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label serverPathLabel;
+        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;

@@ -122,8 +122,15 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         {
             MessageBox.Show("MIT License\n\nCopyright (c) 2020 The-Diamond-Sword-Productions\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the 'Software'), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.", "Licence");
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private async void OnInstallServerButtonClick(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(serverInstallPathTextBox.Text) &&
+                !Directory.Exists(serverInstallPathTextBox.Text))
+            {
+                MessageBox.Show("The current directory is invalid. Please select a valid directory", "Invalid Install Directory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             label12.Text = "Downloading: " + serverInstallPathTextBox.Text + @"\ServerRunner_" + versionDropdown.Text + ".jar Please wait...";
             DialogResult result = MessageBox.Show("You are about to install Minecraft Server " + versionDropdown.Text + " at " + serverInstallPathTextBox.Text + ". \n\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
@@ -291,199 +298,76 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                         progressBar.Value = 40;
                         if (clientDropdown.Text == "Vanilla (Normal Minecraft)")
                         {
-                            using (StreamWriter sw = File.CreateText(serverInstallPathTextBox.Text + @"\" + "Vanilla.txt"))
-                            {
-
-                            }
-                            string SixteenOne = "https://launcher.mojang.com/v1/objects/a412fd69db1f81db3f511c1463fd304675244077/server.jar";
-                            string Sixteen = "https://launcher.mojang.com/v1/objects/a0d03225615ba897619220e256a266cb33a44b6b/server.jar";
-                            string FifteenTwo = "https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar";
-                            string FifteenOne = "https://launcher.mojang.com/v1/objects/4d1826eebac84847c71a77f9349cc22afd0cf0a1/server.jar";
-                            string Fifteen = "https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar";
-                            string FourteenFour = "https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar";
-                            string FourteenThree = "https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar";
-                            string FourteenTwo = "https://launcher.mojang.com/v1/objects/808be3869e2ca6b62378f9f4b33c946621620019/server.jar";
-                            string FourteenOne = "https://launcher.mojang.com/v1/objects/ed76d597a44c5266be2a7fcd77a8270f1f0bc118/server.jar";
-                            string Fourteen = "https://launcher.mojang.com/v1/objects/f1a0073671057f01aa843443fef34330281333ce/server.jar";
-                            string ThirteenTwo = "https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar";
-                            string ThirteenOne = "https://launcher.mojang.com/v1/objects/fe123682e9cb30031eae351764f653500b7396c9/server.jar";
-                            string Thirteen = "https://launcher.mojang.com/v1/objects/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/server.jar";
-                            string TwelveTwo = "https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar";
-                            string TwelveOne = "https://launcher.mojang.com/v1/objects/561c7b2d54bae80cc06b05d950633a9ac95da816/server.jar";
-                            string Twelve = "https://launcher.mojang.com/v1/objects/8494e844e911ea0d63878f64da9dcc21f53a3463/server.jar";
-                            string ElvevenTwo = "https://launcher.mojang.com/v1/objects/f00c294a1576e03fddcac777c3cf4c7d404c4ba4/server.jar";
-                            string ElvevenOne = "https://launcher.mojang.com/v1/objects/1f97bd101e508d7b52b3d6a7879223b000b5eba0/server.jar";
-                            string Elveven = "https://launcher.mojang.com/v1/objects/48820c84cb1ed502cb5b2fe23b8153d5e4fa61c0/server.jar";
-                            string TenTwo = "https://launcher.mojang.com/v1/objects/3d501b23df53c548254f5e3f66492d178a48db63/server.jar";
-                            string TenOne = "https://launcher.mojang.com/v1/objects/cb4c6f9f51a845b09a8861cdbe0eea3ff6996dee/server.jar";
-                            string Ten = "https://launcher.mojang.com/v1/objects/a96617ffdf5dabbb718ab11a9a68e50545fc5bee/server.jar";
-                            string NineFour = "https://launcher.mojang.com/v1/objects/edbb7b1758af33d365bf835eb9d13de005b1e274/server.jar";
-                            string NineThree = "https://launcher.mojang.com/v1/objects/8e897b6b6d784f745332644f4d104f7a6e737ccf/server.jar";
-                            string NineTwo = "https://launcher.mojang.com/v1/objects/2b95cc7b136017e064c46d04a5825fe4cfa1be30/server.jar";
-                            string NineOne = "https://launcher.mojang.com/v1/objects/bf95d9118d9b4b827f524c878efd275125b56181/server.jar";
-                            string Nine = "https://launcher.mojang.com/v1/objects/b4d449cf2918e0f3bd8aa18954b916a4d1880f0d/server.jar";
-                            string EightNine = "https://launcher.mojang.com/v1/objects/b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd/server.jar";
-                            string Eight = "https://launcher.mojang.com/v1/objects/a028f00e678ee5c6aef0e29656dca091b5df11c7/server.jar";
-                            string Seven = "https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar";
-                            if (versionDropdown.Text == "1.16.1") //  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(SixteenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.16") //  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Sixteen, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.15.2") //  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FifteenTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.15.1") //  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FifteenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.15") //  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Fifteen, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.14.4")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FourteenFour, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.14.3")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FourteenThree, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.14.2")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FourteenTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.14.1")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(FourteenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.14")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Fourteen, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.13.2")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(ThirteenTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.13.1")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(ThirteenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.13")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Thirteen, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.12.2")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(TwelveTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.12.1")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(TwelveOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.12")//  DONE -----
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Twelve, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.11")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Elveven, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.11.2")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(ElvevenTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.11.1")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(ElvevenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.10.2")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(TenTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.10.1")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(TenOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.10")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Ten, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.9.4")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(NineFour, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.9.3")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(NineThree, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.9.2")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(NineTwo, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.9.1")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(NineOne, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.9")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Nine, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.8.9")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(EightNine, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.8")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Eight, FileName);
-                            }
-                            else if (versionDropdown.Text == "1.7.10")
-                            {
-                                WebClient client = new WebClient();
-                                client.DownloadFile(Seven, FileName);
-                            }
-
+                            WebClient client = new WebClient();
                             switch (versionDropdown.Text)
                             {
-                                
-                            }
+                                case "1.16.1":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.SixteenOne.URL, FileName);
+                                    break;
 
-                            else
-                            {
-                                label12.Text = "Error";
+                                case "1.16":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Sixteen.URL, FileName);
+                                    break;
+
+                                case "1.15.2":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FifteenTwo.URL, FileName);
+                                    break;
+
+                                case "1.15.1":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FifteenOne.URL, FileName);
+                                    break;
+
+                                case "1.15":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Fifteen.URL, FileName);
+                                    break;
+
+                                case "1.14.4":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FourteenFour.URL, FileName);
+                                    break;
+
+                                case "1.14.3":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FourteenThree.URL, FileName);
+                                    break;
+
+                                case "1.14.2":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FourteenTwo.URL, FileName);
+                                    break;
+
+                                case "1.14.1":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.FourteenOne.URL, FileName);
+                                    break;
+
+                                case "1.14":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Fourteen.URL, FileName);
+                                    break;
+
+                                case "1.13.2":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.ThirteenTwo.URL, FileName);
+                                    break;
+
+                                case "1.13.1":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.ThirteenOne.URL, FileName);
+                                    break;
+
+                                case "1.13":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Thirteen.URL, FileName);
+                                    break;
+
+                                case "1.12.2":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.TwelveTwo.URL, FileName);
+                                    break;
+
+                                case "1.12.1":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Twelve.URL, FileName);
+                                    break;
+
+                                case "1.12":
+                                    await client.DownloadFileTaskAsync(MinecraftVersion.Twelve.URL, FileName);
+                                    break;
+
+                                default:
+                                    label12.Text = "Error";
+                                    break;
                             }
                         }
                         if (clientDropdown.Text == "Spigot (Plugins)")
