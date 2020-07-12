@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,110 +18,116 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
     public partial class WhitelistForm : Form
     {
         static string URL = @"https://api.mojang.com/users/profiles/minecraft/";
+        List<User> whitelistedUsers = new List<User>();
+        private MainForm main;
 
-
-        public WhitelistForm(string data)
+        public WhitelistForm(MainForm main)
         {
             InitializeComponent();
-            serverPathLabel.Text = data;
-            
 
+            this.main = main;
 
+            string data = File.ReadAllText(main.ServerDirectory + "whitelist.json");
+
+            if (!string.IsNullOrWhiteSpace(data))
+            {
+                whitelistedUsers = JsonConvert.DeserializeObject<List<User>>(data);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void OnSaveButtonClick(object sender, EventArgs e)
         {
             statusLabel.Text = "Saving...";
-            System.IO.File.WriteAllText(serverPathLabel.Text + @"\whitelist.json", whitelistedPlayersTextBox.Text);
-            System.IO.File.WriteAllLines(serverPathLabel.Text + @"\tempwhitelist.json", listBox1.Items.Cast<string>().ToArray());
+            string data = JsonConvert.SerializeObject(whitelistedUsers);
+            File.WriteAllText(main.ServerDirectory + @"\whitelist.json", data);
             statusLabel.Text = "Saved!";
         }
 
-        //Added dictionary to keep track of people in whitelist file
-        Dictionary<string, User> whitelistedUsers = new Dictionary<string, User>();
-
-        private async void button1_Click(object sender, EventArgs e)
+        private async void OnGetUserButtonClick(object sender, EventArgs e)
         {
             var username = usernameTextBox.Text;
-            statusLabel.Text = "Getting minecraft uuid from " + username + "'s mojang account...";
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
-            {
-                bool status = await CheckUrlStatus(@"https://api.mojang.com/users/profiles/minecraft/" + usernameTextBox.Text);
-                if (status)
-                {
-                    User user = await GetUser(username);
+            statusLabel.Text = "Getting minecraft UUID from " + username + "'s Mojang account...";
 
-                    //listBox2.Items.Add("  {");
-                    //listBox2.Items.Add("    \"name\" : \"" + textBox1.Text + "\"");
-                    //listBox2.Items.Add("    \"id\" : \"" + uuid + "\"");
-                    //listBox2.Items.Add("  }");
-                    //listBox1.Items.Add(textBox1.Text);
-
-                    whitelistedUsers.Add(username, user);
-
-                    usernameTextBox.Text = "";
-                    statusLabel.Text = "Idle";
-                }
-                else
-                {
-                    MessageBox.Show("The entered mojang account does not exist. Make sure this account is a premium account.", "Account error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    statusLabel.Text = "Idle";
-                }
-            }
-            else
+            if (!NetworkInterface.GetIsNetworkAvailable())
             {
                 MessageBox.Show("You are not connected to the internet, and so you can't add items to your whitelist.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 statusLabel.Text = "Idle";
             }
-
-            RedrawWhitelistedUsersBoxes();
-        }
-
-        private void RedrawWhitelistedUsersBoxes()
-        {
-            StringBuilder sb = new StringBuilder();
-            listBox1.Items.Clear();
-
-            foreach (var kvp in whitelistedUsers)
+            
+            var tuple = await GetUser(username);
+            if (!tuple.Item1)
             {
-                User user = kvp.Value;
-                sb.AppendLine("\t{");
-                sb.AppendLine($"\t\t\"name\" : \"{user.name}\",");
-                sb.AppendLine($"\t\t\"id\" : \"{user.uuid}\"");
-                sb.AppendLine($"\t{"}"}{(whitelistedUsers.Count > 1 ? "," : "")}");
-                listBox1.Items.Add(user.name);
+                MessageBox.Show("Error reaching Mojang server. Please try again.", "Web Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            whitelistedPlayersTextBox.Text = sb.ToString();
+            if (tuple.Item2 == null)
+            {
+                MessageBox.Show("A player with that name cannot be found.", "Invalid User", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (whitelistedUsers.Contains(tuple.Item2))
+            {
+                MessageBox.Show("That player is already whitelisted.", "Whitelist Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            whitelistedUsers.Add(tuple.Item2);
+
+            usernameTextBox.Text = "";
+            statusLabel.Text = "Idle";
+
+            RedrawWhitelistedUsersBox();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void RedrawWhitelistedUsersBox()
         {
-            if (listBox1.SelectedItem != null)
+            whitelistedPlayerListBox.Items.Clear();
+            whitelistTextBox.Text = "";
+
+            foreach (var user in whitelistedUsers)
             {
-                string username = (string)listBox1.Items[listBox1.SelectedIndex];
-                User userToRemove = whitelistedUsers.FirstOrDefault(x => x.Key == username).Value;
+                whitelistedPlayerListBox.Items.Add(user.name);
+                whitelistTextBox.Text += $"({user.name}) - [{user.uuid}]\n";
+            }
+        }
+
+        private void OnRemoveUserButtonClick(object sender, EventArgs e)
+        {
+            if (whitelistedPlayerListBox.SelectedItem != null)
+            {
+                string username = (string)whitelistedPlayerListBox.Items[whitelistedPlayerListBox.SelectedIndex];
+                User userToRemove = whitelistedUsers.FirstOrDefault(x => x.name == username);
                 if (userToRemove != null)
                 {
-                    whitelistedUsers.Remove(username);
-                    listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                    RedrawWhitelistedUsersBoxes();
+                    whitelistedUsers.Remove(userToRemove);
+                    RedrawWhitelistedUsersBox();
                 }
             }
             else
             {
-                MessageBox.Show("Please select an item from the whitelist.", "Wrong slected item.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a user from the whitelist.", "No selected item.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        public static async Task<User> GetUser(string username)
+
+        public async Task<Tuple<bool, User>> GetUser(string username)
         {
             WebClient webClient = new WebClient();
-            var result = await webClient.DownloadStringTaskAsync(new Uri(URL + username));
+            try
+            {
+                var result = await webClient.DownloadStringTaskAsync(new Uri(URL + username));
+                
+                if (string.IsNullOrWhiteSpace(result)) return new Tuple<bool, User>(true, null);
 
-            var user = JsonConvert.DeserializeObject<User>(result);
-            user.uuid = user.uuid.Insert(8, "-").Insert(13, "-").Insert(18, "-").Insert(23, "-");
-            return user;
-
+                var user = JsonConvert.DeserializeObject<User>(result);
+                user.uuid = user.uuid.Insert(8, "-").Insert(13, "-").Insert(18, "-").Insert(23, "-");
+                return new Tuple<bool, User>(true, user);
+            }
+            catch (WebException)
+            {
+                return new Tuple<bool, User>(false, null);
+            }
         }
         public class User
         {
@@ -132,22 +139,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
             [JsonProperty("uuid")]
             public string uuid;
-        }
-        protected async Task<bool> CheckUrlStatus(string Website)
-        {
-            try
-            {
-                var request = WebRequest.Create(Website) as HttpWebRequest;
-                request.Method = "HEAD";
-                using (var response = (HttpWebResponse)await request.GetResponseAsync())
-                {
-                    return response.StatusCode == HttpStatusCode.OK;
-                }
-            }
-            catch
-            {
-                return false;
-            }
         }
     }
 }

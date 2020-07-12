@@ -179,7 +179,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.memoryGBRadio.TabIndex = 25;
             this.memoryGBRadio.Text = "GB";
             this.memoryGBRadio.UseVisualStyleBackColor = true;
-            this.memoryGBRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // memoryDropdown
             // 
@@ -342,7 +341,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.serverInstallPathTextBox.Name = "serverInstallPathTextBox";
             this.serverInstallPathTextBox.Size = new System.Drawing.Size(468, 20);
             this.serverInstallPathTextBox.TabIndex = 11;
-            this.serverInstallPathTextBox.TextChanged += new System.EventHandler(this.OnPathChanged);
+            this.serverInstallPathTextBox.TextChanged += new System.EventHandler(this.OnInstallPathChanged);
             // 
             // serverInstallPathLabel
             // 
@@ -533,7 +532,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.button4.TabIndex = 6;
             this.button4.Text = "Browse...";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.button4.Click += new System.EventHandler(this.OnInstallBrowseClick);
             // 
             // serverRunPathTextBox
             // 
@@ -541,7 +540,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.serverRunPathTextBox.Name = "serverRunPathTextBox";
             this.serverRunPathTextBox.Size = new System.Drawing.Size(466, 20);
             this.serverRunPathTextBox.TabIndex = 5;
-            this.serverRunPathTextBox.TextChanged += new System.EventHandler(this.serverpath_TextChanged);
+            this.serverRunPathTextBox.TextChanged += new System.EventHandler(this.OnRunPathChanged);
             // 
             // label3
             // 

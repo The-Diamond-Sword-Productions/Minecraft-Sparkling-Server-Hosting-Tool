@@ -12,7 +12,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
     public partial class MainForm : Form
     {
 
-        public static string ServerDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MinecraftServer\\";
+        private string serverDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MinecraftServer\\";
+        public string ServerDirectory
+        {
+            get => serverDirectory;
+            set
+            {
+                serverDirectory = value;
+                ServerDirectoryChanged();
+            }
+        }
 
         public MainForm()
         {
@@ -27,15 +36,15 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             if (startStopServerButton.Text == "Start Server")
             {
                 startStopServerButton.Text = "Starting...";
-                if (File.Exists(serverRunPathTextBox.Text + @"\Run.bat") == false)
+                if (File.Exists(ServerDirectory + @"\Run.bat") == false)
                 {
-                    label7.Text = "Cannot find a server run file.\n\nMake sure there is a 'Run.bat' file in the directory: \n\n" + serverRunPathTextBox.Text;
+                    label7.Text = "Cannot find a server run file.\n\nMake sure there is a 'Run.bat' file in the directory: \n\n" + ServerDirectory;
                     groupBox2.Visible = true;
                     startStopServerButton.Text = "Start Server";
                 }
                 else
                 {
-                    if (File.Exists(serverRunPathTextBox.Text + @"\eula.txt") == false)
+                    if (File.Exists(ServerDirectory + @"\eula.txt") == false)
                     {
                         Status_.Text = "Asking to accept the eula...";
                         Status.Text = "Asking to accept the eula...";
@@ -52,7 +61,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                         label17.ForeColor = System.Drawing.Color.Green;
                         Status_.Text = "Starting server...";
                         Status.Text = "Starting server...";
-                        string path = serverRunPathTextBox.Text + @"\";
+                        string path = ServerDirectory + @"\";
                         var process = new System.Diagnostics.Process();
                         process.StartInfo.FileName = path + "Run.bat";
                         process.StartInfo.WorkingDirectory = path;
@@ -70,9 +79,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
             else if (startStopServerButton.Text == "Stop Server")
             {
-                if (File.Exists(serverRunPathTextBox.Text + @"\Stop.bat") == false)
+                if (File.Exists(ServerDirectory + @"\Stop.bat") == false)
                 {
-                    label7.Text = "Cannot find a server stop file. You can alternatively close the console window.\n\nMake sure there is a 'Stop.bat' file in the directory: \n\n" + serverRunPathTextBox.Text;
+                    label7.Text = "Cannot find a server stop file. You can alternatively close the console window.\n\nMake sure there is a 'Stop.bat' file in the directory: \n\n" + ServerDirectory;
                     groupBox2.Visible = true;
                     startStopServerButton.Text = "Stop Server";
                 }
@@ -82,7 +91,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     label17.ForeColor = System.Drawing.Color.Red;
                     Status_.Text = "Stopping server...";
                     Status.Text = "Stopping server...";
-                    string path = serverRunPathTextBox.Text + @"\";
+                    string path = ServerDirectory + @"\";
                     var process = new System.Diagnostics.Process();
                     process.StartInfo.FileName = path + "Stop.bat";
                     process.StartInfo.WorkingDirectory = path;
@@ -99,17 +108,17 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 }
             }
         }
-        private void Button4_Click(object sender, EventArgs e)
+
+        private void OnInstallBrowseClick(object sender, EventArgs e)
         {
-            string folderPath = "";
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                folderPath = folderBrowserDialog1.SelectedPath;
-                serverRunPathTextBox.Text = folderPath;
+                ServerDirectory = folderBrowserDialog1.SelectedPath;
+                serverInstallPathTextBox.Text = ServerDirectory;
             }
-
         }
+
         private void Button5_Click(object sender, EventArgs e)
         {
             string folderPath = "";
@@ -554,7 +563,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 using (StreamWriter sw = File.CreateText(serverInstallPathTextBox.Text + @"\" + "Run.bat"))
                 {
 
-                    await sw.WriteLineAsync($"java -Xmx {memoryDropdown.Text}{(memoryMBRadio.Checked ? "M" : "G")} -Xms {memoryDropdown.Text}{(memoryMBRadio.Checked ? "M" : "G")} -jar ServerRunner_{versionDropdown.Text}.jar {(noguiCheckbox.Checked ? "nogui" : "")}");
+                    await sw.WriteLineAsync($"java -Xmx{memoryDropdown.Text}{(memoryMBRadio.Checked ? "M" : "G")} -Xms{memoryDropdown.Text}{(memoryMBRadio.Checked ? "M" : "G")} -jar ServerRunner_{versionDropdown.Text}.jar {(noguiCheckbox.Checked ? "nogui" : "")}");
 
                     if (pause.Checked) await sw.WriteLineAsync("PAUSE");
                 }
@@ -700,7 +709,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            serverRunPathTextBox.Text = serverInstallPathTextBox.Text;
+            ServerDirectory = serverInstallPathTextBox.Text;
         }
 
         private void Client_Version_Click(object sender, EventArgs e)
@@ -840,11 +849,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button8_Click(object sender, EventArgs e)
         {
             groupBox2.Visible = false;
@@ -862,13 +866,13 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             eulaOkButton.Visible = true;
             linkLabel2.Visible = false;
             startStopServerButton.Text = "Starting...";
-            using (StreamWriter sw = File.CreateText(serverRunPathTextBox.Text + @"\" + "eula.txt"))
+            using (StreamWriter sw = File.CreateText(ServerDirectory + @"\" + "eula.txt"))
             {
                 sw.WriteLine("eula = true");
             }
             Status_.Text = "Starting server...";
             Status.Text = "Starting server...";
-            string path = serverRunPathTextBox.Text + @"\";
+            string path = ServerDirectory + @"\";
             var process = new System.Diagnostics.Process();
             process.StartInfo.FileName = path + "Run.bat";
             process.StartInfo.WorkingDirectory = path;
@@ -902,75 +906,78 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            if (File.Exists(serverRunPathTextBox.Text + @"\tempserver.properties") == false)
+            if (!File.Exists(ServerDirectory + @"\tempserver.properties"))
             {
-                File.Create(serverRunPathTextBox.Text + @"\" + "tempserver.properties");
+                File.Create(ServerDirectory + @"\" + "tempserver.properties").Close();
             }
-            if (File.Exists(serverRunPathTextBox.Text + @"\server.properties") == true)
+
+            if (File.Exists(ServerDirectory + @"\server.properties"))
             {
                 Status.Text = "Opening server.properties file...";
                 Status_.Text = "Opening server.properties file...";
-                ServerPropertiesForm frm = new ServerPropertiesForm(serverRunPathTextBox.Text);
+                ServerPropertiesForm frm = new ServerPropertiesForm(ServerDirectory);
                 frm.Show();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
-            else if (File.Exists(serverRunPathTextBox.Text + @"\server.properties") == false)
+            
+            if (!File.Exists(ServerDirectory + @"\server.properties"))
             {
-                if (File.Exists(serverRunPathTextBox.Text + @"\Run.bat") == true)
+                if (File.Exists(ServerDirectory + @"\Run.bat") != true) return;
+
+                Status.Text = "Generating server.properties file...";
+                Status_.Text = "Generating server.properties file...";
+
+                using (StreamWriter sw = File.CreateText(ServerDirectory + @"\" + "server.properties"))
                 {
-                    Status.Text = "Generating server.properties file...";
-                    Status_.Text = "Generating server.properties file...";
-                    using (StreamWriter sw = File.CreateText(serverRunPathTextBox.Text + @"\" + "server.properties"))
-                    {
-                        sw.WriteLine("#Minecraft server properties");
-                        sw.WriteLine("#Fri Jul 01 00:00:00 CEST 2020");
-                        sw.WriteLine("generator-settings=");
-                        sw.WriteLine("op-permission-level=4");
-                        sw.WriteLine("allow-nether=true");
-                        sw.WriteLine("level-name=world");
-                        sw.WriteLine("enable-query=false");
-                        sw.WriteLine("allow-flight=false");
-                        sw.WriteLine("announce-player-achievements=true");
-                        sw.WriteLine("server-port=25565");
-                        sw.WriteLine("max-world-size=29999984");
-                        sw.WriteLine("level-type=DEFAULT");
-                        sw.WriteLine("enable-rcon=false");
-                        sw.WriteLine("level-seed=");
-                        sw.WriteLine("force-gamemode=false");
-                        sw.WriteLine("server-ip=");
-                        sw.WriteLine("network-compression-threshold=256");
-                        sw.WriteLine("max-build-height=256");
-                        sw.WriteLine("spawn-npcs=true");
-                        sw.WriteLine("white-list=false");
-                        sw.WriteLine("spawn-animals=true");
-                        sw.WriteLine("hardcore=false");
-                        sw.WriteLine("snooper-enabled=true");
-                        sw.WriteLine("resource-pack-sha1=");
-                        sw.WriteLine("online-mode=true");
-                        sw.WriteLine("resource-pack=");
-                        sw.WriteLine("pvp=true");
-                        sw.WriteLine("difficulty=1");
-                        sw.WriteLine("enable-command-block=true");
-                        sw.WriteLine("gamemode=0");
-                        sw.WriteLine("player-idle-timeout=0");
-                        sw.WriteLine("max-players=20");
-                        sw.WriteLine("spawn-monsters=true");
-                        sw.WriteLine("generate-structures=true");
-                        sw.WriteLine("view-distance=10");
-                        sw.WriteLine("motd=A Minecraft Server");
-                    }
-                    Status.Text = "Opening server.properties file...";
-                    Status_.Text = "Opening server.properties file...";
-                    ServerPropertiesForm frm = new ServerPropertiesForm(serverRunPathTextBox.Text);
-                    frm.Show();
-                    Status.Text = "Idle";
-                    Status_.Text = "Idle";
+                    sw.WriteLine("#Minecraft server properties");
+                    sw.WriteLine("#Fri Jul 01 00:00:00 CEST 2020");
+                    sw.WriteLine("generator-settings=");
+                    sw.WriteLine("op-permission-level=4");
+                    sw.WriteLine("allow-nether=true");
+                    sw.WriteLine("level-name=world");
+                    sw.WriteLine("enable-query=false");
+                    sw.WriteLine("allow-flight=false");
+                    sw.WriteLine("announce-player-achievements=true");
+                    sw.WriteLine("server-port=25565");
+                    sw.WriteLine("max-world-size=29999984");
+                    sw.WriteLine("level-type=DEFAULT");
+                    sw.WriteLine("enable-rcon=false");
+                    sw.WriteLine("level-seed=");
+                    sw.WriteLine("force-gamemode=false");
+                    sw.WriteLine("server-ip=");
+                    sw.WriteLine("network-compression-threshold=256");
+                    sw.WriteLine("max-build-height=256");
+                    sw.WriteLine("spawn-npcs=true");
+                    sw.WriteLine("white-list=false");
+                    sw.WriteLine("spawn-animals=true");
+                    sw.WriteLine("hardcore=false");
+                    sw.WriteLine("snooper-enabled=true");
+                    sw.WriteLine("resource-pack-sha1=");
+                    sw.WriteLine("online-mode=true");
+                    sw.WriteLine("resource-pack=");
+                    sw.WriteLine("pvp=true");
+                    sw.WriteLine("difficulty=1");
+                    sw.WriteLine("enable-command-block=true");
+                    sw.WriteLine("gamemode=0");
+                    sw.WriteLine("player-idle-timeout=0");
+                    sw.WriteLine("max-players=20");
+                    sw.WriteLine("spawn-monsters=true");
+                    sw.WriteLine("generate-structures=true");
+                    sw.WriteLine("view-distance=10");
+                    sw.WriteLine("motd=A Minecraft Server");
                 }
+
+                Status.Text = "Opening server.properties file...";
+                Status_.Text = "Opening server.properties file...";
+                ServerPropertiesForm frm = new ServerPropertiesForm(ServerDirectory);
+                frm.Show();
+                Status.Text = "Idle";
+                Status_.Text = "Idle";
             }
             else
             {
-                label7.Text = "Cannot find a Server Properties File. \n\nMake sure that there is a server.properties file \n\nin the directory:" + serverRunPathTextBox.Text;
+                label7.Text = "Cannot find a Server Properties File. \n\nMake sure that there is a server.properties file \n\nin the directory:" + ServerDirectory;
                 groupBox2.Visible = true;
             }
         }
@@ -1103,62 +1110,18 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             System.Diagnostics.Process.Start("http://mssht.sytes.net/");
         }
 
-        private void serverpath_TextChanged(object sender, EventArgs e)
-        {
-            if (serverRunPathTextBox.Text == "")
-            {
-                button14.Enabled = false;
-                button3.Enabled = false;
-                button15.Enabled = false;
-                label13.Text = "Please enter a server path to start your server...";
-                label15.Text = "No server found...";
-            }
-            if (serverRunPathTextBox.Text != "")
-            {
-                if (File.Exists(serverRunPathTextBox.Text + @"\Spigot.txt") == true)
-                {
-                    button14.Enabled = true;
-                    button3.Enabled = true;
-                    button15.Enabled = true;
-                    label13.Text = "Found a Spigot server.";
-                    button14.Text = "Open Server Plugins File";
-                    label15.Text = "Running Server On Spigot.";
-                }
-                else
-                {
-                    button14.Enabled = false;
-                    if (File.Exists(serverRunPathTextBox.Text + @"\Vanilla.txt") == true)
-                    {
-                        button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
-                        button3.Enabled = true;
-                        button15.Enabled = true;
-                        label13.Text = "Found a Vanilla server.";
-                        label15.Text = "Running Server On Vanilla.";
-                    }
-                    else if (File.Exists(serverRunPathTextBox.Text + @"\Run.bat") == false)
-                    {
-                        label13.Text = "This path doesn't contain any minecraft server.";
-                        button14.Enabled = false;
-                        button3.Enabled = false;
-                        button15.Enabled = false;
-                        label15.Text = "No server found...";
-                    }
-                }
-            }
-        }
-
         private void button14_Click(object sender, EventArgs e)
         {
-            if (File.Exists(serverRunPathTextBox.Text + @"\Spigot.txt") == true)
+            if (File.Exists(ServerDirectory + @"\Spigot.txt") == true)
             {
-                if (Directory.Exists(serverRunPathTextBox.Text + @"\plugins") == false)
+                if (Directory.Exists(ServerDirectory + @"\plugins") == false)
                 {
                     Status.Text = "Generating plugins folder...";
                     Status_.Text = "Generating plugins folder...";
-                    System.IO.Directory.CreateDirectory(serverRunPathTextBox.Text + @"\plugins");
+                    System.IO.Directory.CreateDirectory(ServerDirectory + @"\plugins");
                     Status.Text = "Opening plugins folder...";
                     Status_.Text = "Opening plugins folder...";
-                    System.Diagnostics.Process.Start("explorer.exe", serverRunPathTextBox.Text + @"\plugins");
+                    System.Diagnostics.Process.Start("explorer.exe", ServerDirectory + @"\plugins");
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
@@ -1166,7 +1129,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     Status.Text = "Opening plugins folder...";
                     Status_.Text = "Opening plugins folder...";
-                    System.Diagnostics.Process.Start("explorer.exe", serverRunPathTextBox.Text + @"\plugins");
+                    System.Diagnostics.Process.Start("explorer.exe", ServerDirectory + @"\plugins");
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
@@ -1174,21 +1137,21 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
             else
             {
-                label7.Text = "There is not any server in this path.\n\nMake sure there is a 'server' file in the directory: \n\n" + serverRunPathTextBox.Text;
+                label7.Text = "There is not any server in this path.\n\nMake sure there is a 'server' file in the directory: \n\n" + ServerDirectory;
                 groupBox2.Visible = true;
             }
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (serverRunPathTextBox.Text == "")
+            if (ServerDirectory == "")
             {
                 button14.Enabled = false;
                 button3.Enabled = false;
                 label13.Text = "Please enter a server path to start your server...";
             }
-            if (serverRunPathTextBox.Text != "")
+            if (ServerDirectory != "")
             {
-                if (File.Exists(serverRunPathTextBox.Text + @"\Spigot.txt") == true)
+                if (File.Exists(ServerDirectory + @"\Spigot.txt") == true)
                 {
                     button14.Enabled = true;
                     button3.Enabled = true;
@@ -1198,13 +1161,13 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 else
                 {
                     button14.Enabled = false;
-                    if (File.Exists(serverRunPathTextBox.Text + @"\Vanilla.txt") == true)
+                    if (File.Exists(ServerDirectory + @"\Vanilla.txt") == true)
                     {
                         button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
                         button3.Enabled = true;
                         label13.Text = "Found a Vanilla server.";
                     }
-                    else if (File.Exists(serverRunPathTextBox.Text + @"\Run.bat") == false)
+                    else if (File.Exists(ServerDirectory + @"\Run.bat") == false)
                     {
                         label13.Text = "This path doesn't contain any minecraft server.";
                         button14.Enabled = false;
@@ -1216,7 +1179,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (File.Exists(serverRunPathTextBox.Text + @"\Vanilla.txt") == true)
+            if (File.Exists(ServerDirectory + @"\Vanilla.txt") == true)
             {
                 DialogResult result = MessageBox.Show("You can download plugins, but the server you are running on is a Vanilla server, so you will not be able to install theese downloaded plugins on this server.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                 if (result == DialogResult.Yes)
@@ -1232,29 +1195,29 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void button15_Click(object sender, EventArgs e)
         {
-            if (File.Exists(serverRunPathTextBox.Text + @"\tempwhitelist.json") == false)
+            if (File.Exists(ServerDirectory + @"\tempwhitelist.json") == false)
             {
-                File.Create(serverRunPathTextBox.Text + @"\" + "tempwhitelist.json");
+                File.Create(ServerDirectory + @"\" + "tempwhitelist.json");
             }
-                if (File.Exists(serverRunPathTextBox.Text + @"\whitelist.json") == true)
+                if (File.Exists(ServerDirectory + @"\whitelist.json") == true)
             {
                 Status.Text = "Opening whitelist file...";
                 Status_.Text = "Opening whitelist file...";
-                WhitelistForm frm = new WhitelistForm(serverRunPathTextBox.Text);
+                WhitelistForm frm = new WhitelistForm(this);
                 frm.Show();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
-            else if (File.Exists(serverRunPathTextBox.Text + @"\whitelist.json") == false)
+            else if (File.Exists(ServerDirectory + @"\whitelist.json") == false)
             {
-                if (File.Exists(serverRunPathTextBox.Text + @"\Run.bat") == true)
+                if (File.Exists(ServerDirectory + @"\Run.bat") == true)
                 {
                     Status.Text = "Generating whitelist file...";
                     Status_.Text = "Generating whitelist file...";
-                    File.Create(serverRunPathTextBox.Text + @"\" + "whitelist.json");
+                    File.Create(ServerDirectory + @"\" + "whitelist.json");
                     Status.Text = "Opening whitelist file...";
                     Status_.Text = "Opening whitelist file...";
-                    WhitelistForm frm = new WhitelistForm(serverRunPathTextBox.Text);
+                    WhitelistForm frm = new WhitelistForm(this);
                     frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
@@ -1262,14 +1225,76 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
             else
             {
-                label7.Text = "Cannot find a Server whitelist File. \n\nMake sure that there is a whitelist.json file \n\nin the directory:" + serverRunPathTextBox.Text;
+                label7.Text = "Cannot find a Server whitelist File. \n\nMake sure that there is a whitelist.json file \n\nin the directory:" + ServerDirectory;
                 groupBox2.Visible = true;
             }
         }
 
-        private void OnPathChanged(object sender, EventArgs e)
+        private void ServerDirectoryChanged()
+        {
+            serverRunPathTextBox.Text = ServerDirectory;
+            serverInstallPathTextBox.Text = ServerDirectory;
+
+            if (string.IsNullOrWhiteSpace(ServerDirectory))
+            {
+                button14.Enabled = false;
+                button3.Enabled = false;
+                button15.Enabled = false;
+                label13.Text = "Please enter a server path to start your server...";
+                label15.Text = "No server found...";
+            }
+            else
+            {
+                if (File.Exists(ServerDirectory + @"\Spigot.txt"))
+                {
+                    button14.Enabled = true;
+                    button3.Enabled = true;
+                    button15.Enabled = true;
+                    label13.Text = "Found a Spigot server.";
+                    button14.Text = "Open Server Plugins File";
+                    label15.Text = "Running Server On Spigot.";
+                }
+                else
+                {
+                    button14.Enabled = false;
+                }
+
+                if (File.Exists(ServerDirectory + @"\Vanilla.txt"))
+                {
+                    button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
+                    button3.Enabled = true;
+                    button15.Enabled = true;
+                    label13.Text = "Found a Vanilla server.";
+                    label15.Text = "Running Server On Vanilla.";
+                }
+
+                if (!File.Exists(ServerDirectory + @"\Run.bat"))
+                {
+                    label13.Text = "This path doesn't contain any minecraft server.";
+                    button14.Enabled = false;
+                    button3.Enabled = false;
+                    button15.Enabled = false;
+                    label15.Text = "No server found...";
+                }
+                else
+                {
+                    label13.Text = "Server Found!";
+                    button14.Enabled = true;
+                    button3.Enabled = true;
+                    button15.Enabled = true;
+                    label15.Text = "Such server found";
+                }
+            }
+        }
+
+        private void OnInstallPathChanged(object sender, EventArgs e)
         {
             ServerDirectory = serverInstallPathTextBox.Text;
+        }
+
+        private void OnRunPathChanged(object sender, EventArgs e)
+        {
+            ServerDirectory = serverRunPathTextBox.Text;
         }
     }
 }

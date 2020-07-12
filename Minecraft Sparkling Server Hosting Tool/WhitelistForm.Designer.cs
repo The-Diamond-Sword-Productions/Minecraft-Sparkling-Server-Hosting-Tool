@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhitelistForm));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.whitelistedPlayerListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addPlayerButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.serverPathLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deletePlayerButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.whitelistedPlayersTextBox = new System.Windows.Forms.RichTextBox();
+            this.whitelistTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // listBox1
+            // whitelistedPlayerListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(60, 107);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(469, 69);
-            this.listBox1.TabIndex = 0;
+            this.whitelistedPlayerListBox.FormattingEnabled = true;
+            this.whitelistedPlayerListBox.Location = new System.Drawing.Point(60, 107);
+            this.whitelistedPlayerListBox.Name = "whitelistedPlayerListBox";
+            this.whitelistedPlayerListBox.Size = new System.Drawing.Size(469, 69);
+            this.whitelistedPlayerListBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,15 +69,15 @@
             this.usernameTextBox.Size = new System.Drawing.Size(388, 20);
             this.usernameTextBox.TabIndex = 2;
             // 
-            // button1
+            // addPlayerButton
             // 
-            this.button1.Location = new System.Drawing.Point(454, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addPlayerButton.Location = new System.Drawing.Point(454, 40);
+            this.addPlayerButton.Name = "addPlayerButton";
+            this.addPlayerButton.Size = new System.Drawing.Size(75, 23);
+            this.addPlayerButton.TabIndex = 3;
+            this.addPlayerButton.Text = "Add";
+            this.addPlayerButton.UseVisualStyleBackColor = true;
+            this.addPlayerButton.Click += new System.EventHandler(this.OnGetUserButtonClick);
             // 
             // label2
             // 
@@ -88,16 +88,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Server whitelist list:";
             // 
-            // button2
+            // saveButton
             // 
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(454, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.ForeColor = System.Drawing.Color.Red;
+            this.saveButton.Location = new System.Drawing.Point(454, 281);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 5;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.OnSaveButtonClick);
             // 
             // label3
             // 
@@ -137,15 +137,15 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Status:";
             // 
-            // button3
+            // deletePlayerButton
             // 
-            this.button3.Location = new System.Drawing.Point(535, 127);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 23);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.deletePlayerButton.Location = new System.Drawing.Point(535, 127);
+            this.deletePlayerButton.Name = "deletePlayerButton";
+            this.deletePlayerButton.Size = new System.Drawing.Size(48, 23);
+            this.deletePlayerButton.TabIndex = 28;
+            this.deletePlayerButton.Text = "Delete";
+            this.deletePlayerButton.UseVisualStyleBackColor = true;
+            this.deletePlayerButton.Click += new System.EventHandler(this.OnRemoveUserButtonClick);
             // 
             // label7
             // 
@@ -156,32 +156,32 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Server whitelist text file :";
             // 
-            // whitelistedPlayersTextBox
+            // whitelistTextBox
             // 
-            this.whitelistedPlayersTextBox.Location = new System.Drawing.Point(59, 211);
-            this.whitelistedPlayersTextBox.Name = "whitelistedPlayersTextBox";
-            this.whitelistedPlayersTextBox.Size = new System.Drawing.Size(469, 55);
-            this.whitelistedPlayersTextBox.TabIndex = 31;
-            this.whitelistedPlayersTextBox.Text = "";
+            this.whitelistTextBox.Location = new System.Drawing.Point(59, 211);
+            this.whitelistTextBox.Name = "whitelistTextBox";
+            this.whitelistTextBox.Size = new System.Drawing.Size(469, 55);
+            this.whitelistTextBox.TabIndex = 31;
+            this.whitelistTextBox.Text = "";
             // 
             // WhitelistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 328);
-            this.Controls.Add(this.whitelistedPlayersTextBox);
+            this.Controls.Add(this.whitelistTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.deletePlayerButton);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.serverPathLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addPlayerButton);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.whitelistedPlayerListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WhitelistForm";
@@ -193,18 +193,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox whitelistedPlayerListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label serverPathLabel;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deletePlayerButton;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox whitelistedPlayersTextBox;
+        private System.Windows.Forms.RichTextBox whitelistTextBox;
     }
 }
