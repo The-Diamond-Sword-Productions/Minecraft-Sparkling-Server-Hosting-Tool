@@ -599,7 +599,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             File.Create(ServerDirectory + @"\" + "server.properties");
             File.Create(ServerDirectory + @"\" + "tempserver.properties");
             File.Create(ServerDirectory + @"\" + "whitelist.json");
-            File.Create(ServerDirectory + @"\" + "tempwhitelist.json");
 
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 
 
@@ -1251,10 +1250,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void button15_Click(object sender, EventArgs e)
         {
-            if (File.Exists(ServerDirectory + @"\tempwhitelist.json") == false)
-            {
-                File.Create(ServerDirectory + @"\" + "tempwhitelist.json");
-            }
                 if (File.Exists(ServerDirectory + @"\whitelist.json") == true)
             {
                 Status.Text = "Opening whitelist file...";
