@@ -13,6 +13,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
     public partial class MainForm : Form
     {
 
+        private bool init = false;
         private string serverDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\MinecraftServer\\";
         public string ServerDirectory
         {
@@ -20,7 +21,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             set
             {
                 serverDirectory = value;
-                ServerDirectoryChanged();
+                if (init)
+                    ServerDirectoryChanged();
             }
         }
 
@@ -30,6 +32,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
             serverRunPathTextBox.Text = ServerDirectory;
             serverInstallPathTextBox.Text = ServerDirectory;
+
+            init = true;
         }
 
         private async void Button2_Click(object sender, EventArgs e)
@@ -801,11 +805,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             //open server properties
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            ServerDirectory = serverInstallPathTextBox.Text;
-        }
-
         private void Client_Version_Click(object sender, EventArgs e)
         {
 
@@ -1289,7 +1288,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void button15_Click(object sender, EventArgs e)
         {
-                if (File.Exists(ServerDirectory + @"\whitelist.json") == true)
+            if (File.Exists(ServerDirectory + @"\whitelist.json") == true)
             {
                 Status.Text = "Opening whitelist file...";
                 Status_.Text = "Opening whitelist file...";
@@ -1300,7 +1299,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             }
             else if (File.Exists(ServerDirectory + @"\whitelist.json") == false)
             {
-                if (File.Exists(ServerDirectory + @"\Run.bat") == true)
+                if (File.Exists(ServerDirectory + @"\Run.bat"))
                 {
                     Status.Text = "Generating whitelist file...";
                     Status_.Text = "Generating whitelist file...";

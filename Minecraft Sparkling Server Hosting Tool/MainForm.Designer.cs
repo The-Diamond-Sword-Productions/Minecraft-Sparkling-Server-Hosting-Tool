@@ -64,7 +64,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.eulaAcceptButton = new System.Windows.Forms.Button();
             this.eulaOkButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.findInstalledServerButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.serverRunPathTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -407,7 +406,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage2.Controls.Add(this.Status_);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.findInstalledServerButton);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.serverRunPathTextBox);
             this.tabPage2.Controls.Add(this.label3);
@@ -513,16 +511,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label7.Size = new System.Drawing.Size(100, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "MessageBox 2.0";
-            // 
-            // findInstalledServerButton
-            // 
-            this.findInstalledServerButton.Location = new System.Drawing.Point(6, 89);
-            this.findInstalledServerButton.Name = "findInstalledServerButton";
-            this.findInstalledServerButton.Size = new System.Drawing.Size(121, 23);
-            this.findInstalledServerButton.TabIndex = 7;
-            this.findInstalledServerButton.Text = "Find Installed Server";
-            this.findInstalledServerButton.UseVisualStyleBackColor = true;
-            this.findInstalledServerButton.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -906,7 +894,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private System.Windows.Forms.Label noguiWarningLabel;
         private System.Windows.Forms.Label Client_Version;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button findInstalledServerButton;
         private System.Windows.Forms.ComboBox clientDropdown;
         private System.Windows.Forms.Label clientLabel;
         private System.Windows.Forms.RadioButton memoryMBRadio;
