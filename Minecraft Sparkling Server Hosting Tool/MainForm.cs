@@ -151,7 +151,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
 
             DialogResult result = MessageBox.Show("You are about to install Minecraft Server " + versionDropdown.Text + " at " + serverInstallPathTextBox.Text + ". \n\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+
             if (result != DialogResult.Yes) return;
 
             label12.Text = "Checking given directory...";
@@ -309,7 +309,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 return;
             }
 
-            
+
 
             WebClient client = new WebClient();
             client.DownloadProgressChanged += (o, args) =>
@@ -859,32 +859,32 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     MessageBox.Show("A conversion error occured.", "Conversion error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                    memoryDropdown.Items.Clear();
-                    memoryDropdown.Items.Add("512");
-                    memoryDropdown.Items.Add("1024");
-                    memoryDropdown.Items.Add("2048");
-                    memoryDropdown.Items.Add("3072");
-                    memoryDropdown.Items.Add("4096");
-                    memoryDropdown.Items.Add("5120");
-                    memoryDropdown.Items.Add("6144");
-                    memoryDropdown.Items.Add("7168");
-                    memoryDropdown.Items.Add("8192");
-                    memoryDropdown.Items.Add("9216");
-                    memoryDropdown.Items.Add("10240");
-                    memoryDropdown.Items.Add("11264");
-                    memoryDropdown.Items.Add("12288");
-                    memoryDropdown.Items.Add("13312");
-                    memoryDropdown.Items.Add("14336");
-                    memoryDropdown.Items.Add("15360");
-                    memoryDropdown.Items.Add("16384");
-                    memoryDropdown.Items.Add("17408");
-                    memoryDropdown.Items.Add("18432");
-                    memoryDropdown.Items.Add("19456");
-                    memoryDropdown.Items.Add("20480");
-                }
-                else if (memoryMBRadio.Checked == false)
-                {
-                    string Temp = memoryDropdown.Text;
+                memoryDropdown.Items.Clear();
+                memoryDropdown.Items.Add("512");
+                memoryDropdown.Items.Add("1024");
+                memoryDropdown.Items.Add("2048");
+                memoryDropdown.Items.Add("3072");
+                memoryDropdown.Items.Add("4096");
+                memoryDropdown.Items.Add("5120");
+                memoryDropdown.Items.Add("6144");
+                memoryDropdown.Items.Add("7168");
+                memoryDropdown.Items.Add("8192");
+                memoryDropdown.Items.Add("9216");
+                memoryDropdown.Items.Add("10240");
+                memoryDropdown.Items.Add("11264");
+                memoryDropdown.Items.Add("12288");
+                memoryDropdown.Items.Add("13312");
+                memoryDropdown.Items.Add("14336");
+                memoryDropdown.Items.Add("15360");
+                memoryDropdown.Items.Add("16384");
+                memoryDropdown.Items.Add("17408");
+                memoryDropdown.Items.Add("18432");
+                memoryDropdown.Items.Add("19456");
+                memoryDropdown.Items.Add("20480");
+            }
+            else if (memoryMBRadio.Checked == false)
+            {
+                string Temp = memoryDropdown.Text;
                 if (Temp.Length == 1)
                 {
                     Temp = "0.00" + Temp;
@@ -916,29 +916,29 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     MessageBox.Show("A conversion error occured.", "Conversion error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                    memoryDropdown.Text = Temp;
-                    memoryDropdown.Items.Clear();
-                    memoryDropdown.Items.Add("0.5");
-                    memoryDropdown.Items.Add("1");
-                    memoryDropdown.Items.Add("2");
-                    memoryDropdown.Items.Add("3");
-                    memoryDropdown.Items.Add("4");
-                    memoryDropdown.Items.Add("5");
-                    memoryDropdown.Items.Add("6");
-                    memoryDropdown.Items.Add("7");
-                    memoryDropdown.Items.Add("8");
-                    memoryDropdown.Items.Add("9");
-                    memoryDropdown.Items.Add("10");
-                    memoryDropdown.Items.Add("11");
-                    memoryDropdown.Items.Add("12");
-                    memoryDropdown.Items.Add("13");
-                    memoryDropdown.Items.Add("14");
-                    memoryDropdown.Items.Add("15");
-                    memoryDropdown.Items.Add("16");
-                    memoryDropdown.Items.Add("17");
-                    memoryDropdown.Items.Add("18");
-                    memoryDropdown.Items.Add("19");
-                    memoryDropdown.Items.Add("20");
+                memoryDropdown.Text = Temp;
+                memoryDropdown.Items.Clear();
+                memoryDropdown.Items.Add("0.5");
+                memoryDropdown.Items.Add("1");
+                memoryDropdown.Items.Add("2");
+                memoryDropdown.Items.Add("3");
+                memoryDropdown.Items.Add("4");
+                memoryDropdown.Items.Add("5");
+                memoryDropdown.Items.Add("6");
+                memoryDropdown.Items.Add("7");
+                memoryDropdown.Items.Add("8");
+                memoryDropdown.Items.Add("9");
+                memoryDropdown.Items.Add("10");
+                memoryDropdown.Items.Add("11");
+                memoryDropdown.Items.Add("12");
+                memoryDropdown.Items.Add("13");
+                memoryDropdown.Items.Add("14");
+                memoryDropdown.Items.Add("15");
+                memoryDropdown.Items.Add("16");
+                memoryDropdown.Items.Add("17");
+                memoryDropdown.Items.Add("18");
+                memoryDropdown.Items.Add("19");
+                memoryDropdown.Items.Add("20");
             }
         }
 
@@ -1013,7 +1013,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
-            
+
             if (!File.Exists(ServerDirectory + @"\server.properties"))
             {
                 if (File.Exists(ServerDirectory + @"\Run.bat") != true) return;
@@ -1366,12 +1366,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button3.Text = "Open Server properties (Unregistered Server)";
                     button3.Enabled = false;
                     button14.Text = "Open Server Plugins File (Unregistered Server)";
-                    DialogResult Result = MessageBox.Show("This server has not been created with Minecraft Sparkling Server Hosting Tool. Would you like to make it compatible with our tool? If not, you might not have all the features we offer in this tool.", "Invalid Server", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                    if (Result == DialogResult.Yes)
-                    {
-                        ServerCompatibleForm frm = new ServerCompatibleForm(this);
-                        frm.Show();
-                    }
                 }
                 else
                 {
@@ -1393,6 +1387,15 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private void OnRunPathChanged(object sender, EventArgs e)
         {
             ServerDirectory = serverRunPathTextBox.Text;
+            if (File.Exists(ServerDirectory + @"\Run.bat"))
+            {
+                DialogResult Result = MessageBox.Show("This server has not been created with Minecraft Sparkling Server Hosting Tool. Would you like to make it compatible with our tool? If not, you might not have all the features we offer in this tool.", "Invalid Server", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if (Result == DialogResult.Yes)
+                {
+                    ServerCompatibleForm frm = new ServerCompatibleForm(this);
+                    frm.Show();
+                }
+            }
         }
     }
 }
