@@ -93,6 +93,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.progressGroupBox.SuspendLayout();
@@ -552,6 +553,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.button15);
             this.tabPage4.Controls.Add(this.label17);
@@ -573,7 +575,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Maroon;
-            this.label18.Location = new System.Drawing.Point(91, 133);
+            this.label18.Location = new System.Drawing.Point(92, 152);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(393, 26);
             this.label18.TabIndex = 22;
@@ -827,6 +829,17 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.openFileDialog1.InitialDirectory = "C:/";
             this.openFileDialog1.ValidateNames = false;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(5, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(561, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Open Server ops";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -924,6 +937,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button1;
     }
 }
 

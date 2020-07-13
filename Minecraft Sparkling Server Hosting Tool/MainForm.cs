@@ -642,6 +642,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 await sw.WriteLineAsync("motd=A Minecraft Server");
             }
             File.Create(ServerDirectory + @"\" + "whitelist.json");
+            File.Create(ServerDirectory + @"\" + "ops.json");
 
             // THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- THIS IS SEPERATOR -- 
 
@@ -1329,6 +1330,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 button14.Enabled = false;
                 button3.Enabled = false;
                 button15.Enabled = false;
+                button1.Enabled = false;
                 button3.Text = "Open Server properties";
                 label13.Text = "Please enter a server path to start your server...";
                 label15.Text = "No server found...";
@@ -1340,6 +1342,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = true;
                     button3.Enabled = true;
                     button15.Enabled = true;
+                    button1.Enabled = true;
                     button3.Text = "Open Server properties";
                     button14.Text = "Open Server Plugins File";
                     label15.Text = "Running Server On Spigot.";
@@ -1350,6 +1353,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
                     button3.Enabled = true;
                     button15.Enabled = true;
+                    button1.Enabled = true;
                     button14.Enabled = false;
                     button3.Text = "Open Server properties";
                     label15.Text = "Running Server On Vanilla.";
@@ -1361,6 +1365,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = true;
                     button3.Enabled = true;
                     button15.Enabled = true;
+                    button1.Enabled = true;
                     button3.Text = "Open Server properties";
                     label15.Text = "Server Found";
                     button3.Text = "Open Server properties (Unregistered Server)";
@@ -1373,6 +1378,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     button14.Enabled = false;
                     button3.Enabled = false;
                     button15.Enabled = false;
+                    button1.Enabled = false;
                     button3.Text = "Open Server properties";
                     label15.Text = "No server found...";
                 }
@@ -1389,12 +1395,52 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             ServerDirectory = serverRunPathTextBox.Text;
             if (File.Exists(ServerDirectory + @"\Run.bat"))
             {
-                DialogResult Result = MessageBox.Show("This server has not been created with Minecraft Sparkling Server Hosting Tool. Would you like to make it compatible with our tool? If not, you might not have all the features we offer in this tool.", "Invalid Server", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                if (Result == DialogResult.Yes)
+                if (File.Exists(ServerDirectory + @"\Vanilla.txt"))
+                {}
+                else if (File.Exists(ServerDirectory + @"\Spigot.txt"))
+                {}
+                else
                 {
-                    ServerCompatibleForm frm = new ServerCompatibleForm(this);
-                    frm.Show();
+                    DialogResult Result = MessageBox.Show("This server has not been created with Minecraft Sparkling Server Hosting Tool. Would you like to make it compatible with our tool? If not, you might not have all the features we offer in this tool.", "Invalid Server", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (Result == DialogResult.Yes)
+                    {
+                        ServerCompatibleForm frm = new ServerCompatibleForm(this);
+                        frm.Show();
+                    }
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(ServerDirectory + @"\ops.json") == true)
+            {
+                Status.Text = "Opening ops file...";
+                Status_.Text = "Opening ops file...";
+                //OpsForm frm = new OpsForm(this);
+                //frm.Show();
+                Status.Text = "Idle";
+                Status_.Text = "Idle";
+            }
+            else if (File.Exists(ServerDirectory + @"\ops.json") == false)
+            {
+                if (File.Exists(ServerDirectory + @"\Run.bat"))
+                {
+                    Status.Text = "Generating ops file...";
+                    Status_.Text = "Generating ops file...";
+                    File.Create(ServerDirectory + @"\" + "ops.json");
+                    Status.Text = "Opening ops file...";
+                    Status_.Text = "Opening ops file...";
+                    //OpsForm frm = new OpsForm(this);
+                    //frm.Show();
+                    Status.Text = "Idle";
+                    Status_.Text = "Idle";
+                }
+            }
+            else
+            {
+                label7.Text = "Cannot find a Server ops File. \n\nMake sure that there is a ops.json file \n\nin the directory:" + ServerDirectory;
+                groupBox2.Visible = true;
             }
         }
     }
