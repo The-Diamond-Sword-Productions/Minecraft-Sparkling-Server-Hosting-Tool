@@ -69,6 +69,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label3 = new System.Windows.Forms.Label();
             this.startStopServerButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.button15 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.label5 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.progressGroupBox.SuspendLayout();
@@ -571,6 +571,17 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage4.Text = "Server Options";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(5, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(561, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Open Server ops";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -758,9 +769,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.Client_Version.AutoSize = true;
             this.Client_Version.Location = new System.Drawing.Point(307, 47);
             this.Client_Version.Name = "Client_Version";
-            this.Client_Version.Size = new System.Drawing.Size(22, 13);
+            this.Client_Version.Size = new System.Drawing.Size(31, 13);
             this.Client_Version.TabIndex = 15;
-            this.Client_Version.Text = "0.5";
+            this.Client_Version.Text = "0.5.1";
             this.Client_Version.Click += new System.EventHandler(this.Client_Version_Click);
             // 
             // label9
@@ -828,17 +839,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.InitialDirectory = "C:/";
             this.openFileDialog1.ValidateNames = false;
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(5, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(561, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Open Server ops";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
