@@ -1,5 +1,5 @@
 # Minecraft-Sparkling-Server-Hosting-Tool
-This is a free server Hosting Tool.
+This is a free Minecraft server Hosting Tool.
 
 Here you can find all versions of this tool -> https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/releases
 
