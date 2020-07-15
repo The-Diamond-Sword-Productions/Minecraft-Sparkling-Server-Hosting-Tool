@@ -1,5 +1,5 @@
 # Minecraft-Sparkling-Server-Hosting-Tool
-Here you can find all versions of this tool -> https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/releases
+Here you can find all versions of this free Server Hosting tool -> https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool/releases
 
 Have fun and keep in mind that this is still in BETA. If bugs are found, please open an issue. 
 
