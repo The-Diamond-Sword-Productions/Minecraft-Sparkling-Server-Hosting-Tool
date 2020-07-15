@@ -1237,38 +1237,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ServerDirectory == "")
-            {
-                button14.Enabled = false;
-                button3.Enabled = false;
-                label13.Text = "Please enter a server path to start your server...";
-            }
-            if (ServerDirectory != "")
-            {
-                if (File.Exists(ServerDirectory + @"\Spigot.txt") == true)
-                {
-                    button14.Enabled = true;
-                    button3.Enabled = true;
-                    label13.Text = "Found a Spigot server.";
-                    button14.Text = "Open Server Plugins File";
-                }
-                else
-                {
-                    button14.Enabled = false;
-                    if (File.Exists(ServerDirectory + @"\Vanilla.txt") == true)
-                    {
-                        button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
-                        button3.Enabled = true;
-                        label13.Text = "Found a Vanilla server.";
-                    }
-                    else if (File.Exists(ServerDirectory + @"\Run.bat") == false)
-                    {
-                        label13.Text = "This path doesn't contain any minecraft server.";
-                        button14.Enabled = false;
-                        button3.Enabled = false;
-                    }
-                }
-            }
+            ServerDirectory = serverRunPathTextBox.Text;
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1339,6 +1308,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             {
                 if (File.Exists(ServerDirectory + @"\Spigot.txt"))
                 {
+                    label13.Text = "Server Found!";
                     button14.Enabled = true;
                     button3.Enabled = true;
                     button15.Enabled = true;
@@ -1350,6 +1320,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
                 else if (File.Exists(ServerDirectory + @"\Vanilla.txt"))
                 {
+                    label13.Text = "Server Found!";
                     button14.Text = "Open Server Plugins File (This server is not a Spigot server.)";
                     button3.Enabled = true;
                     button15.Enabled = true;
@@ -1417,8 +1388,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             {
                 Status.Text = "Opening ops file...";
                 Status_.Text = "Opening ops file...";
-                //OpsForm frm = new OpsForm(this);
-                //frm.Show();
+                OpsForm frm = new OpsForm(this);
+                frm.Show();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
@@ -1431,8 +1402,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     File.Create(ServerDirectory + @"\" + "ops.json");
                     Status.Text = "Opening ops file...";
                     Status_.Text = "Opening ops file...";
-                    //OpsForm frm = new OpsForm(this);
-                    //frm.Show();
+                    OpsForm frm = new OpsForm(this);
+                    frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
