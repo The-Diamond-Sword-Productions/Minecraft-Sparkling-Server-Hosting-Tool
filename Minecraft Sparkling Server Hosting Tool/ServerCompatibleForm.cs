@@ -44,7 +44,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 MessageBox.Show("Unvalid Argument.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            StatusLabel.Text = "Generating Vanilla.txt file... \n\n Generating tempserver.properties file...";
             File.Create(main.ServerDirectory + @"\tempserver.properties");
+            StatusLabel.Text = "Generating Vanilla.txt file... \n\n Generating tempserver.properties file... \n\n Done!";
             MessageBox.Show("Your server is now compatible with our tool!", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             this.Close();
         }
