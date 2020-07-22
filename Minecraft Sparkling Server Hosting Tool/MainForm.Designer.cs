@@ -107,6 +107,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // checkUpdates
             // 
+            this.checkUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkUpdates.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkUpdates.Location = new System.Drawing.Point(6, 6);
             this.checkUpdates.Name = "checkUpdates";
@@ -118,6 +120,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
@@ -159,6 +164,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // memoryMBRadio
             // 
+            this.memoryMBRadio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryMBRadio.AutoSize = true;
             this.memoryMBRadio.Checked = true;
             this.memoryMBRadio.Location = new System.Drawing.Point(522, 121);
@@ -172,6 +179,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // memoryGBRadio
             // 
+            this.memoryGBRadio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryGBRadio.AutoSize = true;
             this.memoryGBRadio.Location = new System.Drawing.Point(522, 142);
             this.memoryGBRadio.Name = "memoryGBRadio";
@@ -182,6 +191,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // memoryDropdown
             // 
+            this.memoryDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryDropdown.FormattingEnabled = true;
             this.memoryDropdown.Items.AddRange(new object[] {
             "512",
@@ -213,6 +225,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // clientDropdown
             // 
+            this.clientDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clientDropdown.FormattingEnabled = true;
             this.clientDropdown.Items.AddRange(new object[] {
             "Vanilla (Normal Minecraft)",
@@ -226,6 +241,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // clientLabel
             // 
+            this.clientLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.clientLabel.AutoSize = true;
             this.clientLabel.Location = new System.Drawing.Point(130, 96);
             this.clientLabel.Name = "clientLabel";
@@ -235,6 +252,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // noguiWarningLabel
             // 
+            this.noguiWarningLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.noguiWarningLabel.AutoSize = true;
             this.noguiWarningLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.noguiWarningLabel.Location = new System.Drawing.Point(70, 168);
@@ -245,6 +265,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // noguiCheckbox
             // 
+            this.noguiCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.noguiCheckbox.AutoSize = true;
             this.noguiCheckbox.Location = new System.Drawing.Point(6, 167);
             this.noguiCheckbox.Name = "noguiCheckbox";
@@ -256,6 +278,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // memoryLabel
             // 
+            this.memoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoryLabel.AutoSize = true;
             this.memoryLabel.Location = new System.Drawing.Point(267, 134);
             this.memoryLabel.Name = "memoryLabel";
@@ -265,6 +290,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // generateBatCheckbox
             // 
+            this.generateBatCheckbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.generateBatCheckbox.AutoSize = true;
             this.generateBatCheckbox.Checked = true;
             this.generateBatCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -278,6 +305,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // versionLabel
             // 
+            this.versionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.versionLabel.AutoSize = true;
             this.versionLabel.Location = new System.Drawing.Point(3, 97);
             this.versionLabel.Name = "versionLabel";
@@ -287,6 +316,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // versionDropdown
             // 
+            this.versionDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.versionDropdown.FormattingEnabled = true;
             this.versionDropdown.Items.AddRange(new object[] {
             "1.16.1",
@@ -327,6 +358,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // serverPathBrowseButton
             // 
+            this.serverPathBrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.serverPathBrowseButton.Location = new System.Drawing.Point(477, 62);
             this.serverPathBrowseButton.Name = "serverPathBrowseButton";
             this.serverPathBrowseButton.Size = new System.Drawing.Size(83, 20);
@@ -337,6 +369,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // serverInstallPathTextBox
             // 
+            this.serverInstallPathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.serverInstallPathTextBox.Location = new System.Drawing.Point(3, 61);
             this.serverInstallPathTextBox.Name = "serverInstallPathTextBox";
             this.serverInstallPathTextBox.Size = new System.Drawing.Size(468, 20);
@@ -345,6 +380,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // serverInstallPathLabel
             // 
+            this.serverInstallPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.serverInstallPathLabel.AutoSize = true;
             this.serverInstallPathLabel.Location = new System.Drawing.Point(0, 45);
             this.serverInstallPathLabel.Name = "serverInstallPathLabel";
@@ -354,6 +391,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // progressGroupBox
             // 
+            this.progressGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressGroupBox.Controls.Add(this.progressBar);
             this.progressGroupBox.Controls.Add(this.label1);
             this.progressGroupBox.Controls.Add(this.label12);
@@ -366,6 +406,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // progressBar
             // 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(9, 19);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(544, 23);
@@ -373,6 +414,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 45);
             this.label1.Name = "label1";
@@ -382,6 +424,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(45, 45);
@@ -392,6 +435,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // serverInstallButton
             // 
+            this.serverInstallButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.serverInstallButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.serverInstallButton.Location = new System.Drawing.Point(6, 7);
             this.serverInstallButton.Name = "serverInstallButton";
@@ -421,6 +466,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(5, 6);
             this.label13.Name = "label13";
@@ -430,6 +478,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // Status_
             // 
+            this.Status_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Status_.AutoSize = true;
             this.Status_.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status_.Location = new System.Drawing.Point(40, 269);
@@ -440,6 +489,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(3, 269);
             this.label14.Name = "label14";
@@ -449,6 +499,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.linkLabel2);
             this.groupBox2.Controls.Add(this.eulaRejectButton);
             this.groupBox2.Controls.Add(this.eulaAcceptButton);
@@ -473,6 +524,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // eulaRejectButton
             // 
+            this.eulaRejectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.eulaRejectButton.Location = new System.Drawing.Point(372, 84);
             this.eulaRejectButton.Name = "eulaRejectButton";
             this.eulaRejectButton.Size = new System.Drawing.Size(75, 23);
@@ -483,6 +535,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // eulaAcceptButton
             // 
+            this.eulaAcceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.eulaAcceptButton.Location = new System.Drawing.Point(63, 84);
             this.eulaAcceptButton.Name = "eulaAcceptButton";
             this.eulaAcceptButton.Size = new System.Drawing.Size(75, 23);
@@ -493,6 +546,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // eulaOkButton
             // 
+            this.eulaOkButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.eulaOkButton.ForeColor = System.Drawing.Color.Black;
             this.eulaOkButton.Location = new System.Drawing.Point(212, 84);
             this.eulaOkButton.Name = "eulaOkButton";
@@ -515,6 +569,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Location = new System.Drawing.Point(481, 63);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 20);
@@ -525,6 +580,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // serverRunPathTextBox
             // 
+            this.serverRunPathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.serverRunPathTextBox.Location = new System.Drawing.Point(6, 63);
             this.serverRunPathTextBox.Name = "serverRunPathTextBox";
             this.serverRunPathTextBox.Size = new System.Drawing.Size(466, 20);
@@ -533,6 +591,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 47);
             this.label3.Name = "label3";
@@ -542,6 +603,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // startStopServerButton
             // 
+            this.startStopServerButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.startStopServerButton.ForeColor = System.Drawing.Color.Green;
             this.startStopServerButton.Location = new System.Drawing.Point(2, 22);
             this.startStopServerButton.Name = "startStopServerButton";
@@ -573,6 +636,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(5, 117);
             this.button1.Name = "button1";
@@ -584,6 +649,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Maroon;
             this.label18.Location = new System.Drawing.Point(92, 152);
@@ -596,6 +662,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button15
             // 
+            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button15.Enabled = false;
             this.button15.Location = new System.Drawing.Point(5, 82);
             this.button15.Name = "button15";
@@ -607,6 +675,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
@@ -618,6 +687,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(330, 10);
             this.label16.Name = "label16";
@@ -637,6 +707,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(6, 48);
             this.button3.Name = "button3";
@@ -648,6 +720,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // Status
             // 
+            this.Status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Status.AutoSize = true;
             this.Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status.Location = new System.Drawing.Point(40, 269);
@@ -658,6 +731,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(3, 269);
             this.label11.Name = "label11";
@@ -667,6 +741,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.linkLabel4);
             this.groupBox3.Controls.Add(this.button14);
             this.groupBox3.Location = new System.Drawing.Point(6, 185);
@@ -678,6 +753,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // linkLabel4
             // 
+            this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Location = new System.Drawing.Point(208, 49);
             this.linkLabel4.Name = "linkLabel4";
@@ -689,6 +765,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button14
             // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button14.Enabled = false;
             this.button14.Location = new System.Drawing.Point(6, 23);
             this.button14.Name = "button14";
@@ -722,6 +799,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // linkLabel3
             // 
+            this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(128, 177);
             this.linkLabel3.Name = "linkLabel3";
@@ -733,6 +811,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button13
             // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Location = new System.Drawing.Point(162, 107);
             this.button13.Name = "button13";
@@ -744,6 +824,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button12
             // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(375, 77);
             this.button12.Name = "button12";
@@ -766,6 +847,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // Client_Version
             // 
+            this.Client_Version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Client_Version.AutoSize = true;
             this.Client_Version.Location = new System.Drawing.Point(307, 47);
             this.Client_Version.Name = "Client_Version";
@@ -776,6 +858,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(229, 47);
             this.label9.Name = "label9";
@@ -785,6 +868,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.pause);
             this.groupBox1.Location = new System.Drawing.Point(9, 193);
             this.groupBox1.Name = "groupBox1";
@@ -795,6 +879,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // pause
             // 
+            this.pause.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pause.AutoSize = true;
             this.pause.Location = new System.Drawing.Point(7, 20);
             this.pause.Name = "pause";
@@ -805,6 +892,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button6.Location = new System.Drawing.Point(476, 247);
             this.button6.Name = "button6";
@@ -816,6 +904,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 253);
             this.label5.Name = "label5";
@@ -825,6 +914,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(6, 267);
             this.linkLabel1.Name = "linkLabel1";
@@ -847,9 +937,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 316);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Minecraft Sparkling Server Hosting Tool";
             this.Load += new System.EventHandler(this.Menu_Load);
