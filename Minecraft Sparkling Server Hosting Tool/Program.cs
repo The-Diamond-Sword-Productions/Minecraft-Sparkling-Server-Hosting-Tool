@@ -16,7 +16,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Installer());
         }
     }
 }

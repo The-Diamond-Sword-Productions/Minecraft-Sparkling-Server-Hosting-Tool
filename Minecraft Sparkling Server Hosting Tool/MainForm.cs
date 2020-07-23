@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
@@ -734,37 +735,36 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             eulaAcceptButton.Visible = false;
             eulaRejectButton.Visible = false;
             linkLabel2.Visible = false;
-            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
-            {
-                DialogResult update = MessageBox.Show("Do you want to check for updates?", "Updates?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (update == DialogResult.Yes)
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
                 {
-                    if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == false)
+                    DialogResult update = MessageBox.Show("Do you want to check for updates?", "Updates?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (update == DialogResult.Yes)
                     {
-                        MessageBox.Show("Please check your connection and try again.", "No Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    if (GetResponseText("https://pastebin.com/raw/s7pTzDCM") == Client_Version.Text)
-                    {
-                        MessageBox.Show("You are at the lastest version!", "Up-to-date!", MessageBoxButtons.OK);
-                    }
-                    else
-                    {
-                        DialogResult gotoUp = MessageBox.Show("An update is available, do you want to go to our GitHub?", "Goto website?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (gotoUp == DialogResult.Yes)
+                        if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == false)
                         {
-                            System.Diagnostics.Process.Start("https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool");
+                            MessageBox.Show("Please check your connection and try again.", "No Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        if (GetResponseText("https://pastebin.com/raw/s7pTzDCM") == Client_Version.Text)
+                        {
+                            MessageBox.Show("You are at the lastest version!", "Up-to-date!", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            DialogResult gotoUp = MessageBox.Show("An update is available, do you want to go to our GitHub?", "Goto website?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (gotoUp == DialogResult.Yes)
+                            {
+                                System.Diagnostics.Process.Start("https://github.com/The-Diamond-Sword-Productions/Minecraft-Sparkling-Server-Hosting-Tool");
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                checkUpdates.Enabled = false;
-                startStopServerButton.Enabled = false;
-                MessageBox.Show("You are not connected to the internet. \n\nSome buttons and functions will be disabled.", "No internet.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
+                else
+                {
+                    checkUpdates.Enabled = false;
+                    startStopServerButton.Enabled = false;
+                    MessageBox.Show("You are not connected to the internet. \n\nSome buttons and functions will be disabled.", "No internet.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
         }
         public static string GetResponseText(string address)
         {
