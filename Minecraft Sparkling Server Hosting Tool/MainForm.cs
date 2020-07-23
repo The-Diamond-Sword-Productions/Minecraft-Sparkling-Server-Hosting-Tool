@@ -735,7 +735,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             eulaAcceptButton.Visible = false;
             eulaRejectButton.Visible = false;
             linkLabel2.Visible = false;
-            CheckForUpdates();
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
                 DialogResult update = MessageBox.Show("Do you want to check for updates?", "Updates?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -767,13 +766,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 MessageBox.Show("You are not connected to the internet. \n\nSome buttons and functions will be disabled.", "No internet.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-        }
-        private async Task CheckForUpdates()
-        {
-            using (var manager = new UpdateManager("https://pastebin.com/raw/s7pTzDCM"))
-            {
-                await manager.UpdateApp();
-            }
         }
         public static string GetResponseText(string address)
         {
