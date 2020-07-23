@@ -7,7 +7,6 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
-using Squirrel;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
