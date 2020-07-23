@@ -85,7 +85,6 @@
             this.installPathTextBox.ReadOnly = true;
             this.installPathTextBox.Size = new System.Drawing.Size(328, 26);
             this.installPathTextBox.TabIndex = 3;
-            this.installPathTextBox.TextChanged += new System.EventHandler(this.installPathTextBox_TextChanged);
             // 
             // browseButton
             // 

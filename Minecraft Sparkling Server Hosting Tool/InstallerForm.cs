@@ -151,11 +151,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 }
             }
         }
-
-        private void installPathTextBox_TextChanged(object sender, EventArgs e)
-        {
-            installPathTextBox.Text = installPathTextBox.Text + @"\MSSHT\";
-        }
         private void appShortcutToDesktop(string linkName)
         {
             string deskDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
