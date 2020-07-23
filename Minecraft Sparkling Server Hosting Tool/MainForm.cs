@@ -8,6 +8,7 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Threading;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
@@ -117,22 +118,19 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void OnInstallBrowseClick(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var dialog = new CommonOpenFileDialog() { IsFolderPicker = true };
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                ServerDirectory = folderBrowserDialog1.SelectedPath;
-                serverInstallPathTextBox.Text = ServerDirectory;
+                ServerDirectory = dialog.FileName;
             }
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            string folderPath = "";
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var dialog = new CommonOpenFileDialog() { IsFolderPicker = true };
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                folderPath = folderBrowserDialog1.SelectedPath;
-                serverInstallPathTextBox.Text = folderPath;
+                ServerDirectory = dialog.FileName;
             }
         }
 
@@ -687,12 +685,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void Button5_Click_1(object sender, EventArgs e)
         {
-            string folderPath = "";
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            var dialog = new CommonOpenFileDialog() { IsFolderPicker = true };
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                folderPath = folderBrowserDialog1.SelectedPath;
-                serverInstallPathTextBox.Text = folderPath;
+                ServerDirectory = dialog.FileName;
             }
         }
 
@@ -766,6 +762,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     MessageBox.Show("You are not connected to the internet. \n\nSome buttons and functions will be disabled.", "No internet.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
         }
+
         public static string GetResponseText(string address)
         {
             var request = (HttpWebRequest)WebRequest.Create(address);
