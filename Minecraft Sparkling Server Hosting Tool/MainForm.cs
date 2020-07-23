@@ -1212,7 +1212,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     System.IO.Directory.CreateDirectory(ServerDirectory + @"\plugins");
                     Status.Text = "Opening plugins folder...";
                     Status_.Text = "Opening plugins folder...";
-                    System.Diagnostics.Process.Start("explorer.exe", ServerDirectory + @"\plugins");
+                    PluginsForm frm = new PluginsForm(this);
+                    frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
@@ -1220,7 +1221,8 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     Status.Text = "Opening plugins folder...";
                     Status_.Text = "Opening plugins folder...";
-                    System.Diagnostics.Process.Start("explorer.exe", ServerDirectory + @"\plugins");
+                    PluginsForm frm = new PluginsForm(this);
+                    frm.Show();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }

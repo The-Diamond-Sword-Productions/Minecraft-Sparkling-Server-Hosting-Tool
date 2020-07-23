@@ -11,6 +11,7 @@ using System.Threading;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Drawing;
 using System.Security.Principal;
+using System.Reflection;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
@@ -83,7 +84,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             await Install();
 
             progressBar.Value = 100;
-            progressLabel.Text = "Installationg Complete (100%)";
+            progressLabel.Text = "Installation Complete (100%)";
 
             InstallBtn.Text = "Close";
             InstallBtn.Click += (s, args) =>
@@ -99,11 +100,38 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // v v v v v v v v v v v v v
 
 
-            // Temporary Install Code
-            await Task.Run(() =>
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable() == true)
             {
-                Directory.CreateDirectory(installPathTextBox.Text);
-            });
+                await Task.Run(() =>
+                {
+                    Directory.CreateDirectory(installPathTextBox.Text); //Create MSSHT file in selected directory, since when path is entered it adds "\MSSHT\" at the end
+                    progressBar.Value = 25;
+                    progressLabel.Text = "Installating ... (25%)";
+
+                    File.Move(Assembly.GetEntryAssembly().Location, installPathTextBox.Text); //Move .exe file to this repertory
+                    progressBar.Value = 50;
+                    progressLabel.Text = "Installating ... (50%)";
+
+                    if (shortcut.Checked) //Create desktop shortcut if checked
+                    {
+                        appShortcutToDesktop((Environment.SpecialFolder.ProgramFiles) + "\\MSSHT\\" + System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+                    }
+                    progressBar.Value = 75;
+                    progressLabel.Text = "Installating ... (75%)";
+                });
+            }
+            else
+            {
+                MessageBox.Show("You are not connected to the internet, and so you can't install this tool for now. Please install it later.", "Internet connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+            // Temporary Install Code
+            //await Task.Run(() =>
+            //{
+            //    Directory.CreateDirectory(installPathTextBox.Text);
+            //});
 
         }
 
@@ -121,6 +149,25 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 {
                     installPathTextBox.Text = directoryDialog.FileName;
                 }
+            }
+        }
+
+        private void installPathTextBox_TextChanged(object sender, EventArgs e)
+        {
+            installPathTextBox.Text = installPathTextBox.Text + @"\MSSHT\";
+        }
+        private void appShortcutToDesktop(string linkName)
+        {
+            string deskDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+            using (StreamWriter writer = new StreamWriter(deskDir + "\\" + linkName + ".url"))
+            {
+                string app = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                writer.WriteLine("[InternetShortcut]");
+                writer.WriteLine("URL=file:///" + app);
+                writer.WriteLine("IconIndex=0");
+                string icon = app.Replace('\\', '/');
+                writer.WriteLine("IconFile=" + icon);
             }
         }
     }

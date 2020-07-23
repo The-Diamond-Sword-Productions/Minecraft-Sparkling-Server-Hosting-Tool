@@ -39,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progressLabel = new System.Windows.Forms.Label();
+            this.shortcut = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.installPathTextBox.ReadOnly = true;
             this.installPathTextBox.Size = new System.Drawing.Size(328, 26);
             this.installPathTextBox.TabIndex = 3;
+            this.installPathTextBox.TextChanged += new System.EventHandler(this.installPathTextBox_TextChanged);
             // 
             // browseButton
             // 
@@ -100,7 +102,7 @@
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(15, 71);
+            this.panel1.Location = new System.Drawing.Point(15, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(421, 152);
             this.panel1.TabIndex = 5;
@@ -143,11 +145,24 @@
             this.progressLabel.TabIndex = 7;
             this.progressLabel.Text = "Installing:";
             // 
+            // shortcut
+            // 
+            this.shortcut.AutoSize = true;
+            this.shortcut.Checked = true;
+            this.shortcut.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.shortcut.Location = new System.Drawing.Point(14, 218);
+            this.shortcut.Name = "shortcut";
+            this.shortcut.Size = new System.Drawing.Size(215, 17);
+            this.shortcut.TabIndex = 8;
+            this.shortcut.Text = "Create desktop shortcut (recommended)";
+            this.shortcut.UseVisualStyleBackColor = true;
+            // 
             // Installer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 370);
+            this.Controls.Add(this.shortcut);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.panel1);
@@ -182,5 +197,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label progressLabel;
+        private System.Windows.Forms.CheckBox shortcut;
     }
 }

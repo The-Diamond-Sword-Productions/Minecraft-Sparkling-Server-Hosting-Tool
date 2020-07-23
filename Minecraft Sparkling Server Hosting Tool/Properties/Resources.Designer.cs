@@ -63,6 +63,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drag_and_drop {
+            get {
+                object obj = ResourceManager.GetObject("drag_and_drop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MSSHT {
             get {
                 object obj = ResourceManager.GetObject("MSSHT", resourceCulture);
