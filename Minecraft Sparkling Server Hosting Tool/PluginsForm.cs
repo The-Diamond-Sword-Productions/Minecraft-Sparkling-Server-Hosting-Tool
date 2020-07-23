@@ -25,7 +25,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
 
         private void PluginsForm_Load(object sender, EventArgs e)
         {
-            pluginPath.Text = "";
+            pluginPath.Text = "None";
             drag_drop.DragEnter += drag_drop_DragEnter;
             drag_drop.DragDrop += drag_drop_DragDrop;
         }
