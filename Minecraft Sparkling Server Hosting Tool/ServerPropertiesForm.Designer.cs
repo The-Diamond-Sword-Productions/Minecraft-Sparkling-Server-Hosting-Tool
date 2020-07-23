@@ -116,8 +116,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(312, 25);
@@ -129,8 +127,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 25);
@@ -143,8 +139,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.OnlineF);
             this.panel1.Controls.Add(this.OnlineT);
             this.panel1.Location = new System.Drawing.Point(91, 280);
@@ -154,7 +148,6 @@
             // 
             // OnlineF
             // 
-            this.OnlineF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.OnlineF.AutoSize = true;
             this.OnlineF.Location = new System.Drawing.Point(71, 4);
             this.OnlineF.Name = "OnlineF";
@@ -165,7 +158,6 @@
             // 
             // OnlineT
             // 
-            this.OnlineT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.OnlineT.AutoSize = true;
             this.OnlineT.Checked = true;
             this.OnlineT.Location = new System.Drawing.Point(3, 3);
@@ -178,7 +170,6 @@
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(259, 284);
             this.button1.Name = "button1";
@@ -190,8 +181,6 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.NetherF);
             this.panel2.Controls.Add(this.NetherT);
             this.panel2.Location = new System.Drawing.Point(94, 19);
@@ -201,7 +190,6 @@
             // 
             // NetherF
             // 
-            this.NetherF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NetherF.AutoSize = true;
             this.NetherF.Location = new System.Drawing.Point(56, 4);
             this.NetherF.Name = "NetherF";
@@ -212,7 +200,6 @@
             // 
             // NetherT
             // 
-            this.NetherT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.NetherT.AutoSize = true;
             this.NetherT.Checked = true;
             this.NetherT.Location = new System.Drawing.Point(3, 3);
@@ -225,8 +212,6 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.AllowFlightF);
             this.panel3.Controls.Add(this.AllowFlightT);
             this.panel3.Location = new System.Drawing.Point(88, 72);
@@ -236,7 +221,6 @@
             // 
             // AllowFlightF
             // 
-            this.AllowFlightF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AllowFlightF.AutoSize = true;
             this.AllowFlightF.Checked = true;
             this.AllowFlightF.Location = new System.Drawing.Point(56, 4);
@@ -249,7 +233,6 @@
             // 
             // AllowFlightT
             // 
-            this.AllowFlightT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AllowFlightT.AutoSize = true;
             this.AllowFlightT.Location = new System.Drawing.Point(3, 3);
             this.AllowFlightT.Name = "AllowFlightT";
@@ -260,9 +243,6 @@
             // 
             // world
             // 
-            this.world.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.world.Location = new System.Drawing.Point(88, 46);
             this.world.Name = "world";
             this.world.Size = new System.Drawing.Size(112, 20);
@@ -271,8 +251,6 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.AchievementsF);
             this.panel4.Controls.Add(this.AchievementsT);
             this.panel4.Location = new System.Drawing.Point(203, 98);
@@ -282,7 +260,6 @@
             // 
             // AchievementsF
             // 
-            this.AchievementsF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AchievementsF.AutoSize = true;
             this.AchievementsF.Location = new System.Drawing.Point(56, 4);
             this.AchievementsF.Name = "AchievementsF";
@@ -293,7 +270,6 @@
             // 
             // AchievementsT
             // 
-            this.AchievementsT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AchievementsT.AutoSize = true;
             this.AchievementsT.Checked = true;
             this.AchievementsT.Location = new System.Drawing.Point(3, 3);
@@ -306,8 +282,6 @@
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.SpawnNPCf);
             this.panel5.Controls.Add(this.SpawnNPCt);
             this.panel5.Location = new System.Drawing.Point(94, 177);
@@ -317,7 +291,6 @@
             // 
             // SpawnNPCf
             // 
-            this.SpawnNPCf.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.SpawnNPCf.AutoSize = true;
             this.SpawnNPCf.Location = new System.Drawing.Point(56, 4);
             this.SpawnNPCf.Name = "SpawnNPCf";
@@ -328,7 +301,6 @@
             // 
             // SpawnNPCt
             // 
-            this.SpawnNPCt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.SpawnNPCt.AutoSize = true;
             this.SpawnNPCt.Checked = true;
             this.SpawnNPCt.Location = new System.Drawing.Point(3, 3);
@@ -341,8 +313,6 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.wtF);
             this.panel6.Controls.Add(this.wtT);
             this.panel6.Location = new System.Drawing.Point(82, 202);
@@ -352,7 +322,6 @@
             // 
             // wtF
             // 
-            this.wtF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.wtF.AutoSize = true;
             this.wtF.Checked = true;
             this.wtF.Location = new System.Drawing.Point(56, 4);
@@ -365,7 +334,6 @@
             // 
             // wtT
             // 
-            this.wtT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.wtT.AutoSize = true;
             this.wtT.Location = new System.Drawing.Point(3, 3);
             this.wtT.Name = "wtT";
@@ -376,8 +344,6 @@
             // 
             // panel7
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(this.AnimalsF);
             this.panel7.Controls.Add(this.AnimalsT);
             this.panel7.Location = new System.Drawing.Point(109, 228);
@@ -387,7 +353,6 @@
             // 
             // AnimalsF
             // 
-            this.AnimalsF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AnimalsF.AutoSize = true;
             this.AnimalsF.Location = new System.Drawing.Point(56, 4);
             this.AnimalsF.Name = "AnimalsF";
@@ -398,7 +363,6 @@
             // 
             // AnimalsT
             // 
-            this.AnimalsT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.AnimalsT.AutoSize = true;
             this.AnimalsT.Checked = true;
             this.AnimalsT.Location = new System.Drawing.Point(3, 3);
@@ -411,8 +375,6 @@
             // 
             // panel8
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.hcF);
             this.panel8.Controls.Add(this.hcT);
             this.panel8.Location = new System.Drawing.Point(82, 255);
@@ -422,7 +384,6 @@
             // 
             // hcF
             // 
-            this.hcF.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.hcF.AutoSize = true;
             this.hcF.Checked = true;
             this.hcF.Location = new System.Drawing.Point(56, 4);
@@ -435,7 +396,6 @@
             // 
             // hcT
             // 
-            this.hcT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.hcT.AutoSize = true;
             this.hcT.Location = new System.Drawing.Point(3, 3);
             this.hcT.Name = "hcT";
@@ -446,7 +406,6 @@
             // 
             // panel9
             // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.PVPf);
             this.panel9.Controls.Add(this.PVPt);
             this.panel9.Location = new System.Drawing.Point(351, 19);
@@ -456,7 +415,6 @@
             // 
             // PVPf
             // 
-            this.PVPf.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PVPf.AutoSize = true;
             this.PVPf.Location = new System.Drawing.Point(56, 4);
             this.PVPf.Name = "PVPf";
@@ -467,7 +425,6 @@
             // 
             // PVPt
             // 
-            this.PVPt.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.PVPt.AutoSize = true;
             this.PVPt.Checked = true;
             this.PVPt.Location = new System.Drawing.Point(3, 3);
@@ -480,7 +437,6 @@
             // 
             // panel10
             // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.Controls.Add(this.CommandBlockF);
             this.panel10.Controls.Add(this.CommandBlockT);
             this.panel10.Location = new System.Drawing.Point(461, 72);
@@ -490,7 +446,6 @@
             // 
             // CommandBlockF
             // 
-            this.CommandBlockF.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CommandBlockF.AutoSize = true;
             this.CommandBlockF.Location = new System.Drawing.Point(56, 4);
             this.CommandBlockF.Name = "CommandBlockF";
@@ -501,7 +456,6 @@
             // 
             // CommandBlockT
             // 
-            this.CommandBlockT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CommandBlockT.AutoSize = true;
             this.CommandBlockT.Checked = true;
             this.CommandBlockT.Location = new System.Drawing.Point(3, 3);
@@ -514,7 +468,6 @@
             // 
             // panel11
             // 
-            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.Controls.Add(this.MonsterF);
             this.panel11.Controls.Add(this.MonsterT);
             this.panel11.Location = new System.Drawing.Point(416, 150);
@@ -524,7 +477,6 @@
             // 
             // MonsterF
             // 
-            this.MonsterF.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MonsterF.AutoSize = true;
             this.MonsterF.Location = new System.Drawing.Point(56, 4);
             this.MonsterF.Name = "MonsterF";
@@ -535,7 +487,6 @@
             // 
             // MonsterT
             // 
-            this.MonsterT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.MonsterT.AutoSize = true;
             this.MonsterT.Checked = true;
             this.MonsterT.Location = new System.Drawing.Point(3, 3);
@@ -548,7 +499,6 @@
             // 
             // panel12
             // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.Controls.Add(this.GenerateF);
             this.panel12.Controls.Add(this.GenerateT);
             this.panel12.Location = new System.Drawing.Point(435, 177);
@@ -558,7 +508,6 @@
             // 
             // GenerateF
             // 
-            this.GenerateF.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.GenerateF.AutoSize = true;
             this.GenerateF.Location = new System.Drawing.Point(56, 4);
             this.GenerateF.Name = "GenerateF";
@@ -569,7 +518,6 @@
             // 
             // GenerateT
             // 
-            this.GenerateT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.GenerateT.AutoSize = true;
             this.GenerateT.Checked = true;
             this.GenerateT.Location = new System.Drawing.Point(3, 3);
@@ -582,9 +530,6 @@
             // 
             // LevelType
             // 
-            this.LevelType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LevelType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LevelType.FormattingEnabled = true;
             this.LevelType.Items.AddRange(new object[] {
@@ -598,9 +543,6 @@
             // 
             // LevelSeed
             // 
-            this.LevelSeed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LevelSeed.Location = new System.Drawing.Point(85, 151);
             this.LevelSeed.Name = "LevelSeed";
             this.LevelSeed.Size = new System.Drawing.Size(229, 20);
@@ -608,8 +550,6 @@
             // 
             // Difficulty
             // 
-            this.Difficulty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Difficulty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Difficulty.FormattingEnabled = true;
             this.Difficulty.Items.AddRange(new object[] {
@@ -625,8 +565,6 @@
             // 
             // Gamemode
             // 
-            this.Gamemode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Gamemode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Gamemode.FormattingEnabled = true;
             this.Gamemode.Items.AddRange(new object[] {
@@ -642,8 +580,6 @@
             // 
             // MaxPlayer
             // 
-            this.MaxPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.MaxPlayer.Location = new System.Drawing.Point(390, 124);
             this.MaxPlayer.Name = "MaxPlayer";
             this.MaxPlayer.Size = new System.Drawing.Size(112, 20);
@@ -652,8 +588,6 @@
             // 
             // ViewDistance
             // 
-            this.ViewDistance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ViewDistance.Location = new System.Drawing.Point(429, 204);
             this.ViewDistance.Name = "ViewDistance";
             this.ViewDistance.Size = new System.Drawing.Size(112, 20);
@@ -662,8 +596,6 @@
             // 
             // motd
             // 
-            this.motd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.motd.Location = new System.Drawing.Point(351, 228);
             this.motd.Name = "motd";
             this.motd.Size = new System.Drawing.Size(221, 51);
@@ -672,7 +604,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 302);
             this.label5.Name = "label5";
@@ -682,7 +613,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(61, 302);
@@ -693,7 +623,6 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(348, 294);
             this.linkLabel1.Name = "linkLabel1";
@@ -703,7 +632,7 @@
             this.linkLabel1.Text = "Click here to simply create a super custom motd!";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // ServerPropertiesForm
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -736,8 +665,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ServerPropertiesForm";
+            this.MaximizeBox = false;
+            this.Name = "Form2";
             this.Text = "Server Properties";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
