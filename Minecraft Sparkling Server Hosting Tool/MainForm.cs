@@ -1007,7 +1007,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 Status.Text = "Opening server.properties file...";
                 Status_.Text = "Opening server.properties file...";
                 ServerPropertiesForm frm = new ServerPropertiesForm(ServerDirectory);
-                frm.Show();
+                frm.ShowDialog();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
@@ -1062,7 +1062,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 Status.Text = "Opening server.properties file...";
                 Status_.Text = "Opening server.properties file...";
                 ServerPropertiesForm frm = new ServerPropertiesForm(ServerDirectory);
-                frm.Show();
+                frm.ShowDialog();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
@@ -1260,7 +1260,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 Status.Text = "Opening whitelist file...";
                 Status_.Text = "Opening whitelist file...";
                 WhitelistForm frm = new WhitelistForm(this);
-                frm.Show();
+                frm.ShowDialog();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
@@ -1274,7 +1274,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     Status.Text = "Opening whitelist file...";
                     Status_.Text = "Opening whitelist file...";
                     WhitelistForm frm = new WhitelistForm(this);
-                    frm.Show();
+                    frm.ShowDialog();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
@@ -1373,7 +1373,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     if (Result == DialogResult.Yes)
                     {
                         ServerCompatibleForm frm = new ServerCompatibleForm(this);
-                        frm.Show();
+                        frm.ShowDialog();
                     }
                 }
             }
@@ -1386,7 +1386,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 Status.Text = "Opening ops file...";
                 Status_.Text = "Opening ops file...";
                 OpsForm frm = new OpsForm(this);
-                frm.Show();
+                frm.ShowDialog();
                 Status.Text = "Idle";
                 Status_.Text = "Idle";
             }
@@ -1400,7 +1400,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                     Status.Text = "Opening ops file...";
                     Status_.Text = "Opening ops file...";
                     OpsForm frm = new OpsForm(this);
-                    frm.Show();
+                    frm.ShowDialog();
                     Status.Text = "Idle";
                     Status_.Text = "Idle";
                 }
@@ -1410,6 +1410,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
                 label7.Text = "Cannot find a Server ops File. \n\nMake sure that there is a ops.json file \n\nin the directory:" + ServerDirectory;
                 groupBox2.Visible = true;
             }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

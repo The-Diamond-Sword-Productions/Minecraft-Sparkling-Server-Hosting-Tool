@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Drawing;
+using System.Security.Principal;
 
 namespace Minecraft_Sparkling_Server_Hosting_Tool
 {
@@ -18,6 +19,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
         public Installer()
         {
             InitializeComponent();
+
+            if (!new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator))
+            {
+                MessageBox.Show("Administrator privileges are required for this application to function correctly. \n\nPlease re-open this program as Administrator.", "Invalid Privileges", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
 
             this.Size = normalSize;
 
@@ -92,6 +99,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // v v v v v v v v v v v v v
 
 
+            // Temporary Install Code
+            await Task.Run(() =>
+            {
+                Directory.CreateDirectory(installPathTextBox.Text);
+            });
 
         }
 
