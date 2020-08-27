@@ -109,13 +109,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.checkUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkUpdates.BackColor = System.Drawing.Color.LightGray;
+            this.checkUpdates.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkUpdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkUpdates.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkUpdates.Location = new System.Drawing.Point(6, 6);
             this.checkUpdates.Name = "checkUpdates";
             this.checkUpdates.Size = new System.Drawing.Size(559, 38);
             this.checkUpdates.TabIndex = 0;
             this.checkUpdates.Text = "Check for updates";
-            this.checkUpdates.UseVisualStyleBackColor = true;
+            this.checkUpdates.UseVisualStyleBackColor = false;
             this.checkUpdates.Click += new System.EventHandler(this.CheckUpdates_Click);
             // 
             // tabControl1
@@ -137,6 +140,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage1.Controls.Add(this.memoryMBRadio);
             this.tabPage1.Controls.Add(this.memoryGBRadio);
             this.tabPage1.Controls.Add(this.memoryDropdown);
@@ -160,7 +164,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Installation";
             this.tabPage1.ToolTipText = "Install your server here.";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // memoryMBRadio
             // 
@@ -194,6 +197,9 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.memoryDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoryDropdown.BackColor = System.Drawing.Color.LightGray;
+            this.memoryDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.memoryDropdown.ForeColor = System.Drawing.SystemColors.Window;
             this.memoryDropdown.FormattingEnabled = true;
             this.memoryDropdown.Items.AddRange(new object[] {
             "512",
@@ -228,6 +234,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.clientDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientDropdown.BackColor = System.Drawing.Color.LightGray;
+            this.clientDropdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clientDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.clientDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clientDropdown.ForeColor = System.Drawing.SystemColors.Window;
             this.clientDropdown.FormattingEnabled = true;
             this.clientDropdown.Items.AddRange(new object[] {
             "Vanilla (Normal Minecraft)",
@@ -236,7 +247,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.clientDropdown.Name = "clientDropdown";
             this.clientDropdown.Size = new System.Drawing.Size(144, 21);
             this.clientDropdown.TabIndex = 22;
-            this.clientDropdown.Text = "Vanilla (Normal Minecraft)";
             this.clientDropdown.SelectedIndexChanged += new System.EventHandler(this.client_SelectedIndexChanged);
             // 
             // clientLabel
@@ -318,6 +328,11 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.versionDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.versionDropdown.BackColor = System.Drawing.Color.LightGray;
+            this.versionDropdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.versionDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.versionDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.versionDropdown.ForeColor = System.Drawing.SystemColors.Window;
             this.versionDropdown.FormattingEnabled = true;
             this.versionDropdown.Items.AddRange(new object[] {
             "1.16.1",
@@ -354,17 +369,20 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.versionDropdown.Name = "versionDropdown";
             this.versionDropdown.Size = new System.Drawing.Size(70, 21);
             this.versionDropdown.TabIndex = 13;
-            this.versionDropdown.Text = "1.16.1";
             // 
             // serverPathBrowseButton
             // 
             this.serverPathBrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.serverPathBrowseButton.Location = new System.Drawing.Point(477, 62);
+            this.serverPathBrowseButton.BackColor = System.Drawing.Color.LightGray;
+            this.serverPathBrowseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.serverPathBrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.serverPathBrowseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverPathBrowseButton.Location = new System.Drawing.Point(476, 61);
             this.serverPathBrowseButton.Name = "serverPathBrowseButton";
             this.serverPathBrowseButton.Size = new System.Drawing.Size(83, 20);
             this.serverPathBrowseButton.TabIndex = 12;
-            this.serverPathBrowseButton.Text = "Browse...";
-            this.serverPathBrowseButton.UseVisualStyleBackColor = true;
+            this.serverPathBrowseButton.Text = "...";
+            this.serverPathBrowseButton.UseVisualStyleBackColor = false;
             this.serverPathBrowseButton.Click += new System.EventHandler(this.Button5_Click_1);
             // 
             // serverInstallPathTextBox
@@ -437,17 +455,21 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.serverInstallButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.serverInstallButton.BackColor = System.Drawing.Color.LightGray;
+            this.serverInstallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.serverInstallButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.serverInstallButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.serverInstallButton.Location = new System.Drawing.Point(6, 7);
             this.serverInstallButton.Name = "serverInstallButton";
             this.serverInstallButton.Size = new System.Drawing.Size(557, 28);
             this.serverInstallButton.TabIndex = 1;
             this.serverInstallButton.Text = "Click here to  install a server on your computer";
-            this.serverInstallButton.UseVisualStyleBackColor = true;
+            this.serverInstallButton.UseVisualStyleBackColor = false;
             this.serverInstallButton.Click += new System.EventHandler(this.OnInstallServerButtonClick);
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.Status_);
             this.tabPage2.Controls.Add(this.label14);
@@ -462,7 +484,6 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Server Run";
             this.tabPage2.ToolTipText = "Only availible if you have your server installed!";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -505,6 +526,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.groupBox2.Controls.Add(this.eulaAcceptButton);
             this.groupBox2.Controls.Add(this.eulaOkButton);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(25, 131);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(515, 112);
@@ -525,35 +547,44 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // eulaRejectButton
             // 
             this.eulaRejectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.eulaRejectButton.BackColor = System.Drawing.Color.LightGray;
+            this.eulaRejectButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eulaRejectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eulaRejectButton.Location = new System.Drawing.Point(372, 84);
             this.eulaRejectButton.Name = "eulaRejectButton";
             this.eulaRejectButton.Size = new System.Drawing.Size(75, 23);
             this.eulaRejectButton.TabIndex = 11;
             this.eulaRejectButton.Text = "Reject";
-            this.eulaRejectButton.UseVisualStyleBackColor = true;
+            this.eulaRejectButton.UseVisualStyleBackColor = false;
             this.eulaRejectButton.Click += new System.EventHandler(this.button10_Click);
             // 
             // eulaAcceptButton
             // 
             this.eulaAcceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.eulaAcceptButton.BackColor = System.Drawing.Color.LightGray;
+            this.eulaAcceptButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eulaAcceptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eulaAcceptButton.Location = new System.Drawing.Point(63, 84);
             this.eulaAcceptButton.Name = "eulaAcceptButton";
             this.eulaAcceptButton.Size = new System.Drawing.Size(75, 23);
             this.eulaAcceptButton.TabIndex = 10;
             this.eulaAcceptButton.Text = "Accept";
-            this.eulaAcceptButton.UseVisualStyleBackColor = true;
+            this.eulaAcceptButton.UseVisualStyleBackColor = false;
             this.eulaAcceptButton.Click += new System.EventHandler(this.button9_Click);
             // 
             // eulaOkButton
             // 
             this.eulaOkButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.eulaOkButton.ForeColor = System.Drawing.Color.Black;
+            this.eulaOkButton.BackColor = System.Drawing.Color.LightGray;
+            this.eulaOkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eulaOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eulaOkButton.ForeColor = System.Drawing.SystemColors.Window;
             this.eulaOkButton.Location = new System.Drawing.Point(212, 84);
             this.eulaOkButton.Name = "eulaOkButton";
             this.eulaOkButton.Size = new System.Drawing.Size(75, 23);
             this.eulaOkButton.TabIndex = 9;
             this.eulaOkButton.Text = "Ok";
-            this.eulaOkButton.UseVisualStyleBackColor = true;
+            this.eulaOkButton.UseVisualStyleBackColor = false;
             this.eulaOkButton.Click += new System.EventHandler(this.button8_Click);
             // 
             // label7
@@ -570,12 +601,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.LightGray;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(481, 63);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 20);
             this.button4.TabIndex = 6;
-            this.button4.Text = "Browse...";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.OnInstallBrowseClick);
             // 
             // serverRunPathTextBox
@@ -605,17 +640,21 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.startStopServerButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.startStopServerButton.BackColor = System.Drawing.Color.LightGray;
+            this.startStopServerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startStopServerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startStopServerButton.ForeColor = System.Drawing.Color.Green;
             this.startStopServerButton.Location = new System.Drawing.Point(2, 22);
             this.startStopServerButton.Name = "startStopServerButton";
             this.startStopServerButton.Size = new System.Drawing.Size(561, 23);
             this.startStopServerButton.TabIndex = 0;
             this.startStopServerButton.Text = "Start Server";
-            this.startStopServerButton.UseVisualStyleBackColor = true;
+            this.startStopServerButton.UseVisualStyleBackColor = false;
             this.startStopServerButton.Click += new System.EventHandler(this.Button2_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.button15);
@@ -632,19 +671,21 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage4.Size = new System.Drawing.Size(571, 287);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Server Options";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(5, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(561, 23);
             this.button1.TabIndex = 23;
             this.button1.Text = "Open Server ops";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label18
@@ -664,13 +705,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button15.BackColor = System.Drawing.Color.LightGray;
+            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button15.Enabled = false;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Location = new System.Drawing.Point(5, 82);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(561, 23);
             this.button15.TabIndex = 20;
             this.button15.Text = "Open Server whitelist";
-            this.button15.UseVisualStyleBackColor = true;
+            this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // label17
@@ -709,13 +753,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.LightGray;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(6, 48);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(561, 23);
             this.button3.TabIndex = 16;
             this.button3.Text = "Open Server properties";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // Status
@@ -755,6 +802,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.linkLabel4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel4.Location = new System.Drawing.Point(208, 49);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(138, 13);
@@ -766,17 +814,21 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // button14
             // 
             this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.BackColor = System.Drawing.Color.LightGray;
+            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.Enabled = false;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Location = new System.Drawing.Point(6, 23);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(547, 23);
             this.button14.TabIndex = 12;
             this.button14.Text = "Open Server Plugins File";
-            this.button14.UseVisualStyleBackColor = true;
+            this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage3.Controls.Add(this.linkLabel3);
             this.tabPage3.Controls.Add(this.button13);
             this.tabPage3.Controls.Add(this.button12);
@@ -795,12 +847,12 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Settings";
             this.tabPage3.ToolTipText = "Change installation point and other.";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // linkLabel3
             // 
             this.linkLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel3.Location = new System.Drawing.Point(128, 177);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(307, 13);
@@ -813,36 +865,45 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.BackColor = System.Drawing.Color.LightGray;
+            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Location = new System.Drawing.Point(162, 107);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(244, 24);
             this.button13.TabIndex = 18;
             this.button13.Text = "Read our wiki! (maybe you can find help here)";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button12
             // 
             this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.BackColor = System.Drawing.Color.LightGray;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(375, 77);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(190, 24);
             this.button12.TabIndex = 17;
             this.button12.Text = "I need help / Report a bug";
-            this.button12.UseVisualStyleBackColor = true;
+            this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
+            this.button11.BackColor = System.Drawing.Color.LightGray;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.Location = new System.Drawing.Point(6, 77);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(190, 24);
             this.button11.TabIndex = 16;
             this.button11.Text = "Open Minecraft Server Tool GitHub";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Client_Version
@@ -893,13 +954,16 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.LightGray;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button6.Location = new System.Drawing.Point(476, 247);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(89, 32);
             this.button6.TabIndex = 12;
             this.button6.Text = "Licence";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // label5
@@ -916,6 +980,7 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Location = new System.Drawing.Point(6, 267);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(162, 13);
@@ -935,8 +1000,10 @@ namespace Minecraft_Sparkling_Server_Hosting_Tool
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(584, 316);
             this.Controls.Add(this.tabControl1);
+            this.ForeColor = System.Drawing.SystemColors.Window;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Minecraft Sparkling Server Hosting Tool";

@@ -224,9 +224,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\drag-and-drop.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\drag-and-drop.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
